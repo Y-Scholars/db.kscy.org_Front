@@ -1,13 +1,18 @@
 /* tslint:disable:no-unused-variable */
-
+// import Component when you make new components.
 import { TestBed, async } from '@angular/core/testing';
+
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent,
+        FooterComponent
       ],
     });
     TestBed.compileComponents();
