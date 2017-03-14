@@ -3,18 +3,30 @@ footer.main-footer {
   color: #666666;
   padding: 40px;
   font-size: 16px;
-
 }
 
 footer.main-footer .container {
-  float: inherit;
+    display: inline-block;
 }
 
-.footer-developer {
-  display: block;
+.footer-developer p {
+    display: inline-block;
+    float: left;
+    margin: 0px;
 }
 
-.footer-developer a {
+.footer-developer ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+
+.footer-developer ul li {
+    display: inline-block;
+}
+
+.footer-developer ul li a {
   text-decoration: none;
   color: #f7a50c;
   padding-left: 5px;
@@ -25,8 +37,30 @@ footer.main-footer .container {
   padding-top: 30px;
 }
 
+.footer-developer, .footer-address, .footer-contacts {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 18px;
+}
+
+.footer-address p, .footer-contacts p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: inline-block;
+}
+
 @media only screen and (max-width: 720px) {
   footer.main-footer {
-      font-size: 14px;
+     font-size: 14px;
+  }
+
+  .footer-address, .footer-contacts {
+     float: left;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .footer-address, .footer-contacts {
+      height: 30px;
   }
 }
