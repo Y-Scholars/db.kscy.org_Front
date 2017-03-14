@@ -1,0 +1,32 @@
+footer.main-footer {
+  background: #f2f2f2;
+  color: #666666;
+  padding: 40px;
+  font-size: 16px;
+
+}
+
+footer.main-footer .container {
+  float: inherit;
+}
+
+.footer-developer {
+  display: block;
+}
+
+.footer-developer a {
+  text-decoration: none;
+  color: #f7a50c;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.footer-copyright {
+  padding-top: 30px;
+}
+
+@media only screen and (max-width: 720px) {
+  footer.main-footer {
+      font-size: 14px;
+  }
+}
