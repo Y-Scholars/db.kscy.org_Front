@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SideBarComponent } from './components/search/sidebar/sidebar.component'
 
 //Route
 import { RouterModule } from '@angular/router'
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router'
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,
