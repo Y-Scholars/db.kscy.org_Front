@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SideBarComponent } from './components/search/sidebar/sidebar.component'
+import { ResultListComponent } from './components/search/resultlist/resultlist.component';
+import { ResultComponent } from './components/search/result/result.component';
 
 //Route
 import { RouterModule } from '@angular/router'
@@ -17,7 +19,9 @@ import { RouterModule } from '@angular/router'
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SideBarComponent
+    SideBarComponent,
+    ResultComponent,
+    ResultListComponent
   ],
   imports: [
     BrowserModule,

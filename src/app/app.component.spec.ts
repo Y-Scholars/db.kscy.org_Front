@@ -5,7 +5,9 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { SideBarComponent } from './components/search/sidebar/sidebar.component'
+import { SideBarComponent } from './components/search/sidebar/sidebar.component';
+import { ResultListComponent } from './components/search/resultlist/resultlist.component';
+import { ResultComponent } from './components/search/result/result.component';
 
 describe('AppComponent', () => {
   beforeEach(() => {
@@ -14,7 +16,9 @@ describe('AppComponent', () => {
         AppComponent,
         HeaderComponent,
         FooterComponent,
-        SideBarComponent
+        SideBarComponent,
+        ResultComponent,
+        ResultListComponent
       ],
     });
     TestBed.compileComponents();
