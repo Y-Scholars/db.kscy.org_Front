@@ -12,6 +12,7 @@
 header.main-header {
     background: #424d66;
     height: 54px;
+    font-family: 'Nanum Barun Gothic', sans-serif
 }
 
 .container {
@@ -39,7 +40,11 @@ header.main-header {
     line-height: 54px;
     padding: 10px;
     font-family: 'Nanum Barun Gothic', sans-serif;
+<<<<<<< HEAD
     font-weight: bold;
+=======
+    font-weight: 700;
+>>>>>>> origin/master
     color: #a3a3a3;
 }
 
@@ -51,7 +56,11 @@ header.main-header {
     text-decoration: none;
     color: #ffffff;
     font-family: 'Nanum Barun Gothic', sans-serif;
+<<<<<<< HEAD
     font-weight: bold;
+=======
+    font-weight: 700;
+>>>>>>> origin/master
     font-size: 16pt;
     padding-left: 20px;
     line-height: 54px;
