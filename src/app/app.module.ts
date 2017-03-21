@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SideBarComponent } from './components/search/sidebar/sidebar.component'
 import { ResultListComponent } from './components/search/resultlist/resultlist.component';
 import { ResultComponent } from './components/search/result/result.component';
+import { MainComponent } from './components/search/main/main.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ResultComponent } from './components/search/result/result.component';
     FooterComponent,
     SideBarComponent,
     ResultComponent,
-    ResultListComponent
+    ResultListComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

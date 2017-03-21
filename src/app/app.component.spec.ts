@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SideBarComponent } from './components/search/sidebar/sidebar.component';
 import { ResultListComponent } from './components/search/resultlist/resultlist.component';
 import { ResultComponent } from './components/search/result/result.component';
+import { MainComponent } from './components/search/main/main.component';
 
 describe('AppComponent', () => {
   beforeEach(() => {
@@ -18,7 +19,8 @@ describe('AppComponent', () => {
         FooterComponent,
         SideBarComponent,
         ResultComponent,
-        ResultListComponent
+        ResultListComponent,
+        MainComponent
       ],
     });
     TestBed.compileComponents();
