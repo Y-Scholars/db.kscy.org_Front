@@ -54,19 +54,3 @@ footer.main-footer .container {
     margin-bottom: 0px;
     display: inline-block;
 }
-
-@media only screen and (max-width: 720px) {
-  footer.main-footer {
-     font-size: 14px;
-  }
-
-  .footer-address, .footer-contacts {
-     float: left;
-  }
-}
-
-@media only screen and (max-width: 380px) {
-  .footer-address, .footer-contacts {
-      height: 30px;
-  }
-}
