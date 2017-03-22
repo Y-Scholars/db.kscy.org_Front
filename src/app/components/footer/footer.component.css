@@ -1,10 +1,14 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
 footer.main-footer {
   background: #424d66;
   color: #ffffff;
   padding: 40px;
   font-size: 16px;
-  font-family: 'Nanum Barun Gothic', sans-serif;
-  font-weight: lighter;
+  font-family: 'Nanum Gothic', serif;
+  position: relative;
+  height: 123px;
+  bottom: 0px;
 }
 
 footer.main-footer .container {
