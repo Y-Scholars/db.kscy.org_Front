@@ -1,14 +1,13 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-
 footer.main-footer {
-  background: #424d66;
-  color: #ffffff;
-  padding: 40px;
-  font-size: 16px;
-  font-family: 'Nanum Gothic', serif;
-  position: relative;
-  height: 123px;
-  bottom: 0px;
+    background: #424d66;
+    color: #ffffff;
+    padding: 30px;
+    font-size: 16px;
+    font-family: 'Nanum Gothic', serif;
+    height: 230px;
+    bottom: 0px;
+    margin: 0px;
 }
 
 footer.main-footer .container {
@@ -33,24 +32,36 @@ footer.main-footer .container {
 }
 
 .footer-developer ul li a {
-  text-decoration: none;
-  color: #f7a50c;
-  padding-left: 5px;
-  padding-right: 5px;
+    text-decoration: none;
+    color: #f7a50c;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .footer-copyright {
-  padding-top: 30px;
+    padding-top: 30px;
 }
 
-.footer-developer, .footer-address, .footer-contacts {
+.footer-developer,
+.footer-address,
+.footer-contacts {
     margin-top: 5px;
     margin-bottom: 5px;
     height: 18px;
 }
 
-.footer-address p, .footer-contacts p {
+.footer-address p,
+.footer-contacts p {
     margin-top: 0px;
     margin-bottom: 0px;
     display: inline-block;
+}
+
+
+/*
+** Sticky Footer
+*/
+
+html {
+    min-height: 100vh;
 }
