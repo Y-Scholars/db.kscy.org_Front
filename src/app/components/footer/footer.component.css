@@ -5,7 +5,7 @@ footer.main-footer {
     padding: 30px;
     font-size: 16px;
     font-family: 'Nanum Gothic', serif;
-    height: 230px;
+    height: 123px;
     bottom: 0px;
     margin: 0px;
 }
@@ -55,13 +55,4 @@ footer.main-footer .container {
     margin-top: 0px;
     margin-bottom: 0px;
     display: inline-block;
-}
-
-
-/*
-** Sticky Footer
-*/
-
-html {
-    min-height: 100vh;
 }
