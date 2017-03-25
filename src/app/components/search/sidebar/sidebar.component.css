@@ -1,5 +1,5 @@
 .container {
-    height: 696px;
+    height: 80vh;
     text-align: center;
     font-family: 'Nanum Barun Gothic', sans-serif;
 }
@@ -13,16 +13,12 @@
     border: none;
     border-radius: 0;
     overflow-y: auto;
-    background-color: #222;
+    background-color: #5e5e5e;
     bottom: 0;
     overflow-x: hidden;
     padding-bottom: 40px;
-    height: 696px;
+    height: 80vh;
     padding-left: 0px;
-}
-
-.side-nav>li>ul {
-    padding: 20px;
 }
 
 .side-nav>li>ul>li>a {
@@ -50,7 +46,7 @@
 .nav>li>a:focus,
 .nav>li>a:hover {
     text-decoration: none;
-    background-color: #eee;
+    background-color: #f7a50c;
 }
 
 .navbar-nav>li>a {
@@ -66,11 +62,15 @@
 }
 
 a {
-    color: #337ab7;
+    color: #fff;
     text-decoration: none;
     background-color: transparent;
 }
 
 * {
     box-sizing: border-box;
+}
+
+.left-div>ul {
+    padding-top: 15px;
 }
