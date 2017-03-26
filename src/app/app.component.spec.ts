@@ -9,6 +9,9 @@ import { SideBarComponent } from './components/search/sidebar/sidebar.component'
 import { ResultListComponent } from './components/search/resultlist/resultlist.component';
 import { ResultComponent } from './components/search/result/result.component';
 import { MainComponent } from './components/search/main/main.component';
+import { SignUpComponent } from './components/user/signup/signup.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
+
 
 describe('AppComponent', () => {
   beforeEach(() => {
@@ -20,7 +23,9 @@ describe('AppComponent', () => {
         SideBarComponent,
         ResultComponent,
         ResultListComponent,
-        MainComponent
+        MainComponent,
+        SignUpComponent,
+        ProfileComponent
       ],
     });
     TestBed.compileComponents();
