@@ -56,7 +56,10 @@ img {
 }
 
 .search_btn {
+<<<<<<< HEAD
     width: 42px;
+=======
+>>>>>>> origin/master
     height: 42px;
     background-color: #424d66;
     border-bottom: 3px solid #424d66;
