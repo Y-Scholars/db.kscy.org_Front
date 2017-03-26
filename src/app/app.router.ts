@@ -3,18 +3,24 @@ import {ResultComponent} from "./components/search/result/result.component";
 import {ResultListComponent} from "./components/search/resultlist/resultlist.component";
 import {SideBarComponent} from "./components/search/sidebar/sidebar.component";
 import {MainComponent} from "./components/search/main/main.component";
+import { SignUpComponent } from './components/user/signup/signup.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 
 export const router: Routes = [
   {
-    path: '', redirectTo: '/posts', pathMatch: 'full'
+    path: '', redirectTo: '/main', pathMatch: 'full'
   },
   {
-    path:'posts', component: MainComponent
+    path:'main', component: MainComponent
   },
   {
-    path:'posts/my', component: SideBarComponent
+    path:'search/1', component: SideBarComponent
   },
   {
-    path:'posts/kk', component: SideBarComponent
+    path:'signup', component : SignUpComponent
+  },
+  {
+    path:'profile', component : ProfileComponent
   }
+
 ];
