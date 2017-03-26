@@ -3,12 +3,14 @@
     font-family: 'Nanum Barun Gothic', sans-serif;
     text-align: left;
     margin-left: 225px;
+    width: 100%;
 }
 
 .location {
     background: url(http://www.riss.kr/commons/images/loc_line.gif) 0 100% repeat-x;
     height: 33px;
     padding: 7px 0;
+    width: 100%;
 }
 
 img {
