@@ -1,0 +1,76 @@
+.container {
+    height: 80vh;
+    text-align: center;
+    font-family: 'Nanum Barun Gothic', sans-serif;
+}
+
+.side-nav {
+    position: absolute;
+    top: 38px;
+    left: 225px;
+    width: 225px;
+    margin-left: -225px;
+    border: none;
+    border-radius: 0;
+    overflow-y: auto;
+    background-color: #5e5e5e;
+    bottom: 0;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+    height: 80vh;
+    padding-left: 0px;
+}
+
+.side-nav>li>ul>li>a {
+    width: auto;
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    color: #999;
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+#list>li {
+    width: 225px;
+    list-style-type: none;
+}
+
+.logo {
+    width: 225px;
+    height: 200px;
+}
+
+.nav>li>a:focus,
+.nav>li>a:hover {
+    text-decoration: none;
+    background-color: #f7a50c;
+}
+
+.navbar-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.left-div>ul {
+    padding-top: 15px;
+}

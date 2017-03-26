@@ -2,21 +2,19 @@ import {Routes} from "@angular/router";
 import {ResultComponent} from "./components/search/result/result.component";
 import {ResultListComponent} from "./components/search/resultlist/resultlist.component";
 import {SideBarComponent} from "./components/search/sidebar/sidebar.component";
+import {MainComponent} from "./components/search/main/main.component";
 
 export const router: Routes = [
   {
     path: '', redirectTo: '/posts', pathMatch: 'full'
   },
   {
-    path:'', component: ResultComponent
+    path:'posts', component: MainComponent
   },
   {
-    path:'posts/my', component: ResultListComponent
+    path:'posts/my', component: SideBarComponent
   },
   {
-    path:'posts/:key', component: SideBarComponent
-  },
-  {
-    path:'posts/write/:key',
+    path:'posts/kk', component: SideBarComponent
   }
 ];

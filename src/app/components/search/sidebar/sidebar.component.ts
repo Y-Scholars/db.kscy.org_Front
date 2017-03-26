@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResultListComponent } from '../resultlist/resultlist.component';
 
 @Component({
   selector: 'sidebar-component',

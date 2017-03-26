@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {Router, RouterModule} from "@angular/router";
+import {router} from "./app.router";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -31,8 +33,12 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
     BrowserModule,
     FormsModule,
     HttpModule,
+<<<<<<< HEAD
     ModalModule.forRoot(),
     BootstrapModalModule
+=======
+    RouterModule.forRoot(router)
+>>>>>>> origin/master
     ],
   providers: [],
   bootstrap: [AppComponent],

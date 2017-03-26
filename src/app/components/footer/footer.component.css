@@ -2,11 +2,20 @@
 footer.main-footer {
     background: #424d66;
     color: #ffffff;
+<<<<<<< HEAD
     padding: 40px;
     font-size: 16px;
     font-family: 'Nanum Gothic', serif;
     position: relative;
     bottom: 0px;
+=======
+    padding: 30px;
+    font-size: 16px;
+    font-family: 'Nanum Gothic', serif;
+    height: 123px;
+    bottom: 0px;
+    margin: 0px;
+>>>>>>> origin/master
 }
 
 footer.main-footer .container {
@@ -41,13 +50,16 @@ footer.main-footer .container {
     padding-top: 30px;
 }
 
-.footer-developer, .footer-address, .footer-contacts {
+.footer-developer,
+.footer-address,
+.footer-contacts {
     margin-top: 5px;
     margin-bottom: 5px;
     height: 18px;
 }
 
-.footer-address p, .footer-contacts p {
+.footer-address p,
+.footer-contacts p {
     margin-top: 0px;
     margin-bottom: 0px;
     display: inline-block;

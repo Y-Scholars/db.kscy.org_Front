@@ -1,7 +1,8 @@
 /* Search */
+
 img {
     display: block;
-    margin : auto;
+    margin: auto;
 }
 
 .container {
@@ -11,31 +12,37 @@ img {
     text-align: center;
     font-family: 'Nanum Barun Gothic', sans-serif;
 }
+
 .search {
     text-align: center;
-    width:100%;
+    width: 100%;
     margin-top: 50px;
-    margin-bottom:240px;
+    margin-bottom: 100px;
     position: relative;
 }
+
 .logo {
-    margin-top: 200px;
+    margin-top: 150px;
     width: 150px;
     height: 150px;
 }
+
 .sform {
     margin-top: 9px;
     margin-bottom: 9px;
 }
+
 .green_window {
-    display:-moz-inline-block;
-    display:-moz-inline-box;
-    display:inline-block;
-    width:550px;
-    height:42px;
-    border:3px solid #424d66;
+    display: -moz-inline-block;
+    display: -moz-inline-box;
+    display: inline-block;
+    width: 550px;
+    height: 42px;
+    border: 3px solid #424d66;
 }
+
 .input_text {
+<<<<<<< HEAD
     width:526px;
     height:36px;
     border:0;
@@ -50,6 +57,24 @@ img {
 }
 .search_btn{
     height: 42px;
+=======
+    width: 526px;
+    height: 40px;
+    border: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+    line-height: 42px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000000;
+    background-color: transparent;
+    ime-mode: active;
+    outline: none
+}
+
+.search_btn {
+    height: 48px;
+>>>>>>> origin/master
     background-color: #424d66;
     border-bottom: 3px solid #424d66;
     border-right: 3px solid #424d66;
@@ -57,21 +82,48 @@ img {
     border-left: 1px solid #424d66;
     bottom: 0;
     position: absolute;
-
     -o-transition: background-color .2s ease-in;
     -moz-transition: background-color .2s ease-in;
     -webkit-transition: background-color .2s ease-in;
     transition: background-color .2s ease-in;
 }
+
 .search_img {
     text-align: center;
     width: 26px;
     height: 26px;
 }
+
 .search_btn:hover {
     opacity: 0.8;
 }
 
 .search_btn:active {
     opacity: 0.5;
+}
+
+.sub_search {
+    margin-bottom: 80px;
+}
+
+.sub_search>a {
+    color: #606060;
+    font-size: 15px;
+    padding-top: 70px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 0 50px;
+    height: 15px;
+}
+
+#sub01 {
+    background: url(http://www.riss.kr/main/images/unified_link1.gif) 50% 0 no-repeat;
+}
+
+#sub02 {
+    background: url(http://www.riss.kr/main/images/unified_link1.gif) 50% 0 no-repeat;
+}
+
+#sub03 {
+    background: url(http://www.riss.kr/main/images/unified_link1.gif) 50% 0 no-repeat;
 }
