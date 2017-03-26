@@ -2,20 +2,12 @@
 footer.main-footer {
     background: #424d66;
     color: #ffffff;
-<<<<<<< HEAD
-    padding: 40px;
-    font-size: 16px;
-    font-family: 'Nanum Gothic', serif;
-    position: relative;
-    bottom: 0px;
-=======
     padding: 30px;
     font-size: 16px;
     font-family: 'Nanum Gothic', serif;
-    height: 123px;
+    height: inherit;
     bottom: 0px;
     margin: 0px;
->>>>>>> origin/master
 }
 
 footer.main-footer .container {

@@ -33,12 +33,9 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
     BrowserModule,
     FormsModule,
     HttpModule,
-<<<<<<< HEAD
     ModalModule.forRoot(),
-    BootstrapModalModule
-=======
+    BootstrapModalModule, 
     RouterModule.forRoot(router)
->>>>>>> origin/master
     ],
   providers: [],
   bootstrap: [AppComponent],
