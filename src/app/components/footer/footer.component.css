@@ -1,14 +1,12 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-
 footer.main-footer {
-  background: #424d66;
-  color: #ffffff;
-  padding: 40px;
-  font-size: 16px;
-  font-family: 'Nanum Gothic', serif;
-  position: relative;
-  height: 123px;
-  bottom: 0px;
+    background: #424d66;
+    color: #ffffff;
+    padding: 40px;
+    font-size: 16px;
+    font-family: 'Nanum Gothic', serif;
+    position: relative;
+    bottom: 0px;
 }
 
 footer.main-footer .container {
@@ -33,14 +31,14 @@ footer.main-footer .container {
 }
 
 .footer-developer ul li a {
-  text-decoration: none;
-  color: #f7a50c;
-  padding-left: 5px;
-  padding-right: 5px;
+    text-decoration: none;
+    color: #f7a50c;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .footer-copyright {
-  padding-top: 30px;
+    padding-top: 30px;
 }
 
 .footer-developer, .footer-address, .footer-contacts {

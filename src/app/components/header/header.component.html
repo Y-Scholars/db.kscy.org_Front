@@ -1,19 +1,38 @@
+<!DOCTYPE HTML>
+<!-- <popup #loginPopup (confirmClick)="login()">
+    <div class="loginForm">
+        <div class="close"></div>
+        <div class="div-login" data-tab-show-class="Login">
+            <a href="#" class="link">로그인</a>
+        </div>
+        <div class="div-singup" data-tab-show-class="Login">
+            <a href="#" class="link">회원가입</a>
+        </div>
+
+        <div class="input-wrap">
+            <input type="text" class="input" placeholder="이메일" name="identifier">
+        </div>
+        <div class="input-wrap">
+            <input type="password" class="input" placeholder="비밀번호" name="password">
+        </div>
+        <div class="inner-button-wrap">
+                <a href="/member/find/" class="button">비밀번호 찾기</a>
+        </div>
+        <div class="button-wrap">
+            <button type="submit" class="button-round-blue">로그인</button>
+        </div>
+    </div>
+</popup> -->
+
 <header class="main-header">
-    <script type="text/javascript">
-        function popupOpen(){
-            var popUrl = "test.html";	//팝업창에 출력될 페이지 URL
-            var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
-                window.open(popUrl,"",popOption);
-        }
-    </script>
     <div class="container">
         <span class="header-span">
             <a href="">Y Schola</a>
         </span>
         <ul class="header-ul">
-            <li class="header-ul-li"><a href=""><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
-            <li class="header-ul-li"><a href=""><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a></li>
-            <li class="header-ul-li"><a href=""><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+            <li class="header-ul-li"><button (click)="loginPopup()"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</button></li>
+            <li class="header-ul-li"><button href=""><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</button></li>
+            <li class="header-ul-li"><button href=""><i class="fa fa-user" aria-hidden="true"></i> Profile</button></li>
         </ul>
     </div>
 </header>

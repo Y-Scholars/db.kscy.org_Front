@@ -37,11 +37,10 @@ img {
 }
 .input_text {
     width:526px;
-    height:40px;
+    height:36px;
     border:0;
-    padding-left: 12px;
-    padding-right: 12px;
-    line-height:42px;
+    padding: 0px 8px 0px 8px;
+    line-height:36px;
     font-weight:bold;
     font-size:16px;
     color:#000000;
@@ -50,7 +49,7 @@ img {
     outline:none
 }
 .search_btn{
-    height: 48px;
+    height: 42px;
     background-color: #424d66;
     border-bottom: 3px solid #424d66;
     border-right: 3px solid #424d66;
