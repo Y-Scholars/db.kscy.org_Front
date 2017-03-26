@@ -11,6 +11,9 @@ import { SideBarComponent } from './components/search/sidebar/sidebar.component'
 import { ResultListComponent } from './components/search/resultlist/resultlist.component';
 import { ResultComponent } from './components/search/result/result.component';
 import { MainComponent } from './components/search/main/main.component';
+import { LoginWindow } from './components/header/login.component';
+import { ModalModule } from 'angular2-modal';
+import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 
 
 @NgModule({
@@ -21,14 +24,20 @@ import { MainComponent } from './components/search/main/main.component';
     SideBarComponent,
     ResultComponent,
     ResultListComponent,
-    MainComponent
+    MainComponent,
+    LoginWindow
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ModalModule.forRoot(),
+    BootstrapModalModule
     ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+      LoginWindow,
+  ]
 })
 export class AppModule { }
