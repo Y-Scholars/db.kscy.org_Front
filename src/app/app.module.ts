@@ -15,6 +15,9 @@ import { ResultComponent } from './components/search/result/result.component';
 import { MainComponent } from './components/search/main/main.component';
 import { SignUpComponent } from './components/user/signup/signup.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
+import { LoginWindow } from './components/header/login.component';
+import { ModalModule } from 'angular2-modal';
+import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 
 
 @NgModule({
@@ -27,15 +30,21 @@ import { ProfileComponent } from './components/user/profile/profile.component';
     ResultListComponent,
     MainComponent,
     SignUpComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoginWindow
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ModalModule.forRoot(),
+    BootstrapModalModule,
     RouterModule.forRoot(router)
     ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+      LoginWindow,
+  ]
 })
 export class AppModule { }
