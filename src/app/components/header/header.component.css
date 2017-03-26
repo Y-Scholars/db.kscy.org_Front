@@ -1,5 +1,7 @@
 /* Encapsulated styles */
-#user-info, #sign-in-button {
+
+#user-info,
+#sign-in-button {
     display: none;
 }
 
@@ -12,7 +14,7 @@
 header.main-header {
     background: #424d66;
     height: 54px;
-    font-family: 'Nanum Barun Gothic', sans-serif
+    font-family: 'Nanum Barun Gothic', sans-serif;
 }
 
 .container {

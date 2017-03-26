@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 
+/*
 class Login {
     on:boolean = false;
 
@@ -19,6 +20,7 @@ class Login {
     template: '<popup><h2>Content</h2>Some content here</popup>', 
     directives: [Login]
 })
+*/
 
 export class HeaderComponent implements OnInit {
 
