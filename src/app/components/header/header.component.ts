@@ -4,7 +4,7 @@ import { LoginWindow } from './login.component';
 import { overlayConfigFactory } from "angular2-modal";
 import { BSModalContext } from 'angular2-modal/plugins/bootstrap';
 
-import { SignupService } from '../signupService';
+import { SignupService } from '../service/signupService';
 
 @Component({
     selector: 'header-component',

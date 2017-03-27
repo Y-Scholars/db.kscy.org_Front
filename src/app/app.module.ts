@@ -18,7 +18,7 @@ import { ProfileComponent } from './components/user/profile/profile.component';
 import { LoginWindow } from './components/header/login.component';
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
-import { SignupService } from './components/signupService';
+import { SignupService } from './components/service/signupService';
 
 @NgModule({
   declarations: [
