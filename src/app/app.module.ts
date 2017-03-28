@@ -19,6 +19,7 @@ import { LoginWindow } from './components/header/login.component';
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import { SignupService } from './components/service/signupService';
+import { AuthHttp } from 'angular2-jwt';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { SignupService } from './components/service/signupService';
     BootstrapModalModule,
     RouterModule.forRoot(router)
     ],
-  providers: [SignupService],
+  providers: [SignupService,AuthHttp],
   bootstrap: [AppComponent],
   entryComponents: [
       LoginWindow,
