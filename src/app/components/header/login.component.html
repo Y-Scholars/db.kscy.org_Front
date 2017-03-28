@@ -34,11 +34,11 @@
                     <div class="Content">
                         <div class="InputWrap">
                             <label class="Label" for="email">이메일</label>
-                            <input type="text" class="Input" placeholder="이메일주소 입력" name="email" id="email">
+                            <input type="text" class="Input" placeholder="이메일주소 입력" name="email" id="email" [(ngModel)]="email">
                         </div>
                         <div class="InputWrap">
                             <label class="Label" for="password">비밀번호</label>
-                            <input type="password" class="Input" name="password">
+                            <input type="password" class="Input" name="password" id="password" [(ngModel)]="password">
                         </div>
                         <div class="InputWrap InputNameWrap">
                             <label class="Label" for="name">닉네임</label>
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="Footer">
-                        <button class="Button Action">회원가입</button>
+                        <button class="Button Action" type="submit" (click)="onLogin()">로그인</button>
                     </div>
                 </form>
             </div>
