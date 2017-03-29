@@ -17,11 +17,11 @@ import { SignupService } from '../service/signupService';
 
 export class HeaderComponent {
 
-    loggedIn:boolean = false;
+    //loggedIn:boolean = false;
 
     constructor(vcRef: ViewContainerRef, public modal: Modal, private _signupService: SignupService,private auth:AuthService) {
         modal.overlay.defaultViewContainer = vcRef;
-        this.loggedIn = auth.loggedIn();
+        //this.loggedIn = auth.loggedIn();
     }
 
     loginPopup() {

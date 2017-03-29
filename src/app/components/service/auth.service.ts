@@ -1,19 +1,11 @@
-import {
-    Injectable
-} from '@angular/core';
-import {
-    Http,
-    Response,
-    Headers,
+import {Injectable} from '@angular/core';
+import {Http,Response,Headers,
     RequestOptions
 } from "@angular/http";
 import {
     Router
 } from '@angular/router';
 
-import {
-    tokenNotExpired
-} from 'angular2-jwt';
 
 import 'rxjs/add/operator/map';
 
@@ -42,22 +34,41 @@ export class AuthService {
                 res => {
                     console.log("Response : " + res.data.token);
                     localStorage.setItem('id_token', res.data.token);
+                    var token = localStorage.getItem('id_token');
                     location.href = '/home';
                 },
 
                 error => {
                     alert(error.text());
                     console.log(error.text());
-                }
+                },
+                () => localStorage.getItem('id_token')
                 );
     }
 
     loggedIn() {
-        console.log(tokenNotExpired());
-        return tokenNotExpired();
+        console.log('checking token!!'); 
+
+        //Default isValie = true
+        let isValid: boolean = true;
+        
+        //look for token
+        var token = localStorage.getItem('id_token');
+
+        //Token Exist
+        if (token) {
+        }
+
+        //token not found
+        else {
+            isValid = false;
+        }
+        return isValid;
     }
 
     logout() {
+        alert("로그아웃 되었습니다.");
+        location.href = '/home';
         localStorage.removeItem('id_token');
     }
 }
