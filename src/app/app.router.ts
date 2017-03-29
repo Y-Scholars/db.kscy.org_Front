@@ -8,10 +8,10 @@ import { ProfileComponent } from './components/user/profile/profile.component';
 
 export const router: Routes = [
   {
-    path: '', redirectTo: '/main', pathMatch: 'full'
+    path: '', redirectTo: '/home', pathMatch: 'full'
   },
   {
-    path:'main', component: MainComponent
+    path:'home', component: MainComponent
   },
   {
     path:'search/1', component: SideBarComponent

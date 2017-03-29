@@ -1,41 +1,63 @@
-import { Injectable } from '@angular/core';
-import {Http, Response, Headers, RequestOptions} from "@angular/http";
+import {
+    Injectable
+} from '@angular/core';
+import {
+    Http,
+    Response,
+    Headers,
+    RequestOptions
+} from "@angular/http";
+import {
+    Router
+} from '@angular/router';
 
-import { tokenNotExpired } from 'angular2-jwt';
+import {
+    tokenNotExpired
+} from 'angular2-jwt';
 
 import 'rxjs/add/operator/map';
+
+
+
 
 @Injectable()
 export class AuthService {
 
-  constructor(private http: Http) {}
+    constructor(private http: Http, private router: Router) {}
 
-  login(email:String,password:String) {
-      let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:5000/api/v1/auth";
-      let body = "email=" + email + "&password=" + password;
-      let headers = new Headers({'Content-Type':'application/x-www-form-urlencoded', 'Accept':'application/json'});
-      let options = new RequestOptions({headers:headers});
+    login(email: String, password: String) {
+        let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:5000/api/v1/auth";
+        let body = "email=" + email + "&password=" + password;
+        let headers = new Headers({
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Accept': 'application/json'
+        });
+        let options = new RequestOptions({
+            headers: headers
+        });
 
-      this.http.post(url, body,options)
-      .map(res => res.json()
-      )
-      .subscribe(
-          res =>console.log(res),
-        // We're assuming the response will be an object
-        // with the JWT on an id_token key
-        data => localStorage.setItem('id_token', data.token)
-        
-        
-      );
-      console.log(localStorage.getItem('id_token'));
-      
-  }
+        this.http.post(url, body, options)
+            .map(res => res.json())
+            .subscribe(
+                res => {
+                    console.log("Response : " + res.data.token);
+                    localStorage.setItem('id_token', res.data.token);
+                    location.href = '/home';
+                },
 
-  loggedIn() {
-    return tokenNotExpired();
-  }
+                error => {
+                    alert(error.text());
+                    console.log(error.text());
+                }
+                );
+    }
 
-  logout() {
-    localStorage.removeItem('id_token');
-  }
+    loggedIn() {
+        console.log(tokenNotExpired());
+        return tokenNotExpired();
+    }
+
+    logout() {
+        localStorage.removeItem('id_token');
+    }
 }
