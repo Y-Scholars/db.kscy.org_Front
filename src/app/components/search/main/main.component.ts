@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchService } from '../../service/search.service';
 
 @Component({
     selector: 'main-component',
@@ -15,13 +14,12 @@ export class MainComponent implements OnInit {
 
     }
 
-    constructor(private searching:SearchService) {
-        // this.dialog.context.dialogClass = 'modal-centered';
+    constructor() {
     }
 
     search() {
         this.keyword = (<HTMLInputElement>document.getElementById("keyword")).value;
-        this.searching.search(this.keyword);
+        location.href = '/search&q=' + this.keyword;
     }
 
 }

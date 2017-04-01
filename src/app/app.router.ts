@@ -14,7 +14,7 @@ export const router: Routes = [
     path:'home', component: MainComponent
   },
   {
-    path:'search/1', component: SideBarComponent
+    path:'search', component: SideBarComponent
   },
   {
     path:'signup', component : SignUpComponent
