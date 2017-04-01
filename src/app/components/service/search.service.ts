@@ -14,7 +14,7 @@ export class SearchService {
         console.log(url);
 
         let headers = new Headers({
-            'Content-Type': 'application/json' , 
+            'Content-Type': 'application/json' ,
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
             'Access-Control-Allow-Headers':'X-Requested-With'
@@ -23,10 +23,10 @@ export class SearchService {
             headers: headers
         });
 
-        return this.http.get(url,options)
+        return this.http.get(url)
             .map(res => {
-                res.text();
-                console.log(res);
+                let obj = JSON.parse(res.text());
+                console.log(obj.hits.hits[0]._source.research_name);
             })
             .subscribe(
                 res => {

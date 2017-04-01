@@ -19,7 +19,7 @@ export class MainComponent implements OnInit {
 
     search() {
         this.keyword = (<HTMLInputElement>document.getElementById("keyword")).value;
-        location.href = '/search&q=' + this.keyword;
+        location.href = '/search?q=' + this.keyword;
     }
 
 }
