@@ -1,19 +1,17 @@
 <!DOCTYPE HTML>
-<div class="container" >
+<div class="container">
     <h1>
         <img class="logo" src="./assets/img/logo.png">
     </h1>
     <div class="title">
     </div>
     <div class="search">
-        <form class="sform" name="sform" action="https://search.naver.com/search.naver" method="get">
-            <span class="green_window">
-                <input class="input_text" name="query" type="text" title="검색어 입력" maxlength="255"  tabindex="1" accesskey="s" style="ime-mode:active;" autocomplete="off" onclick="document.getElementById('fbm').value=1;"  />
+        <span class="green_window">
+                <input class="input_text" id="keyword" name="query" type="text" title="검색어 입력" maxlength="255"  tabindex="1" accesskey="s" style="ime-mode:active;" autocomplete="off"  />
             </span>
-            <button class="search_btn" type="submit" title="검색" tabindex="3">
+        <button class="search_btn" type="submit" title="검색" tabindex="3" (click)="search()">
                 <img class="search_img" src="./assets/img/search.png">
             </button>
-        </form>
     </div>
 
     <div class="sub_search">
