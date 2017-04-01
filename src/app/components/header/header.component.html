@@ -13,8 +13,8 @@
             <a href="">Y Schola</a>
         </span>
         <ul class="header-ul">
-            <li class="header-ul-li" *ngIf="!auth.loggedIn()"><button (click)="loginPopup()"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</button></li>
-            <li class="header-ul-li" *ngIf="auth.loggedIn()"><button (click)="logout()"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</button></li>
+            <li class="header-ul-li" *ngIf="!loggedIn"><button (click)="loginPopup()"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</button></li>
+            <li class="header-ul-li" *ngIf="loggedIn"><button (click)="logout()"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</button></li>
             <li class="header-ul-li"><button href=""><i class="fa fa-user" aria-hidden="true"></i> Profile</button></li>
         </ul>
     </div>

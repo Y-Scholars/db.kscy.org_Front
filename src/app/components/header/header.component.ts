@@ -1,4 +1,4 @@
-import { Component, ViewContainerRef, ViewEncapsulation } from '@angular/core';
+import { Component, ViewContainerRef, ViewEncapsulation,OnInit } from '@angular/core';
 import { Modal } from 'angular2-modal/plugins/bootstrap';
 import { LoginWindow } from './login.component';
 import { overlayConfigFactory } from "angular2-modal";
@@ -15,13 +15,16 @@ import { SignupService } from '../service/signupService';
     providers:[AuthService]
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
     loggedIn:boolean = false;
 
     constructor(vcRef: ViewContainerRef, public modal: Modal, private _signupService: SignupService,private auth:AuthService) {
         modal.overlay.defaultViewContainer = vcRef;
-        this.loggedIn = auth.loggedIn();
+    }
+
+    ngOnInit() {
+        this.loggedIn = this.auth.loggedIn();
     }
 
     loginPopup() {
