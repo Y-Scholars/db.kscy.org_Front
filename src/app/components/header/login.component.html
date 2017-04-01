@@ -30,7 +30,7 @@
                 </form>
             </div>
             <div class="Join tabItem" style="display: block;">
-                <form onsubmit="$.OP.GG.ajax.member.join(this);return false;" action="https://www.op.gg/member/ajax2/join.json/">
+                <form>
                     <div class="Content">
                         <div class="InputWrap">
                             <label class="Label" for="email">이메일</label>
@@ -38,16 +38,12 @@
                         </div>
                         <div class="InputWrap">
                             <label class="Label" for="password">비밀번호</label>
-                            <input type="password" class="Input" name="password" id="password" [(ngModel)]="password">
-                        </div>
-                        <div class="InputWrap InputNameWrap">
-                            <label class="Label" for="name">닉네임</label>
-                            <input type="text" class="Input" name="name" id="name">
+                            <input type="password" class="Input" placeholder="비밀번호 입력" name="password" id="password" [(ngModel)]="password">
                         </div>
                         <div class="RadioInputWrap">
                             <label class="Label">
-                    <input class="Input jcf-ignore" type="checkbox" name="TermsOfService" value="yes">
-                    <span class="Text">OP.GG의 <a href="/about/agreement/" target="_blank">이용약관</a>과 <a href="/about/privacyCollect/" target="_blank">개인정보 수집 동의</a>을 읽고 동의합니다.</span>
+                    <input class="Input jcf-ignore" type="checkbox" name="autoLogin" [(ngModel)]="autoLogin">
+                    <span class="Text"> 자동로그인</span>
                 </label>
                         </div>
                     </div>

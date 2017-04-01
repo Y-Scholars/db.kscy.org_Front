@@ -17,7 +17,7 @@ export class AuthService {
 
     constructor(private http: Http, private router: Router) {}
 
-    login(email: String, password: String) {
+    login(email: String, password: String,autoLogin:boolean) {
         let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:5000/api/v1/auth";
         let body = "email=" + email + "&password=" + password;
         let headers = new Headers({
@@ -33,16 +33,19 @@ export class AuthService {
             .subscribe(
                 res => {
                     console.log("Response : " + res.data.token);
-                    localStorage.setItem('id_token', res.data.token);
-                    var token = localStorage.getItem('id_token');
+                    if(autoLogin) {
+                        localStorage.setItem('id_token', res.data.token);
+                    }
+                    else {
+                        sessionStorage.setItem('id_token',res.data.token);
+                    }
                     location.href = '/home';
                 },
 
                 error => {
                     alert(error.text());
                     console.log(error.text());
-                },
-                () => localStorage.getItem('id_token')
+                }
                 );
     }
 
@@ -53,14 +56,20 @@ export class AuthService {
         let isValid: boolean = true;
         
         //look for token
-        var token = localStorage.getItem('id_token');
+        var localToken = localStorage.getItem('id_token');
+        var sessionToken = sessionStorage.getItem('id_token');
 
         //Token Exist
-        if (token) {
+        if (localToken) {
+            console.log("autoLoggedIn");
+        }
+        else if(sessionToken) {
+            console.log("sessionLoggedIn");
         }
 
         //token not found
         else {
+            console.log("no login");
             isValid = false;
         }
         return isValid;
@@ -69,6 +78,15 @@ export class AuthService {
     logout() {
         alert("로그아웃 되었습니다.");
         location.href = '/home';
-        localStorage.removeItem('id_token');
+
+        var localToken = localStorage.getItem('id_token');
+        var sessionToken = sessionStorage.getItem('id_token');
+
+        if(localToken) {
+            localStorage.removeItem('id_token');
+        }
+        else {
+            sessionStorage.removeItem('id_token');
+        }
     }
 }

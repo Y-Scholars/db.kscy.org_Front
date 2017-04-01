@@ -15,14 +15,20 @@ import { Router } from '@angular/router';
 export class LoginWindow {
     private email : String;
     private password : String;
+    private autoLogin : boolean = false;
+    //filter: boolean= false;
 
-    failed = false;
     constructor(public dialog: DialogRef<BSModalContext>,router:Router,private auth:AuthService) {
         // this.dialog.context.dialogClass = 'modal-centered';
     }
+/*
+    filterData(){
+        this.filter = !this.filter;// this will change value of it true and false 
+        console.log(this.filter);
+    }
+    */
+
     onLogin() {
-        this.email = (<HTMLInputElement>document.getElementById("email")).value;
-        this.password = (<HTMLInputElement>document.getElementById("password")).value;
-        this.auth.login(this.email,this.password);
+        this.auth.login(this.email,this.password,this.autoLogin);
     }
 }
