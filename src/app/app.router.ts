@@ -5,6 +5,7 @@ import {SideBarComponent} from "./components/search/sidebar/sidebar.component";
 import {MainComponent} from "./components/search/main/main.component";
 import { SignUpComponent } from './components/user/signup/signup.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
+import { AuthGuard } from './components/service/auth-guard.service';
 
 export const router: Routes = [
   {
@@ -20,7 +21,8 @@ export const router: Routes = [
     path:'signup', component : SignUpComponent
   },
   {
-    path:'profile', component : ProfileComponent
+    path:'profile', component : ProfileComponent,
+    canActivate: [AuthGuard]
   }
 
 ];

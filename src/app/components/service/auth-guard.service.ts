@@ -12,7 +12,10 @@ export class AuthGuard implements CanActivate {
   canActivate() {
     if(this.authservice.loggedIn()) {
       return true;
-    } else {
+    } 
+    
+    else {
+      alert("로그인이 필요한 서비스입니다.");
       this.router.navigateByUrl('/home');
       return false;
     }

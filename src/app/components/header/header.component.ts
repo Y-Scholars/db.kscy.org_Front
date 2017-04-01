@@ -4,9 +4,9 @@ import { LoginWindow } from './login.component';
 import { overlayConfigFactory } from "angular2-modal";
 import { BSModalContext } from 'angular2-modal/plugins/bootstrap';
 
-import { AuthService }from'../service/auth.service';
+import { Router } from '@angular/router';
 
-import { SignupService } from '../service/signupService';
+import { AuthService }from'../service/auth.service';
 
 @Component({
     selector: 'header-component',
@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
 
     loggedIn:boolean = false;
 
-    constructor(vcRef: ViewContainerRef, public modal: Modal, private _signupService: SignupService,private auth:AuthService) {
+    constructor(vcRef: ViewContainerRef, public modal: Modal,private auth:AuthService,private router:Router) {
         modal.overlay.defaultViewContainer = vcRef;
     }
 
@@ -33,10 +33,13 @@ export class HeaderComponent implements OnInit {
         //     .body('In Angular 2')
         //     .open();
         this.modal.open(LoginWindow, overlayConfigFactory({ isBlocking: false }, BSModalContext));
-        // this._signupService.signUp();
     }
 
     logout() {
         this.auth.logout();
+    }
+
+    profile() {
+        this.router.navigate(['/profile']);
     }
 }
