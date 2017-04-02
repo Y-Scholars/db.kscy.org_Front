@@ -40,6 +40,7 @@ export class HeaderComponent implements OnInit {
     }
 
     profile() {
+        this.auth.getProfile();
         this.router.navigate(['/profile']);
     }
 }

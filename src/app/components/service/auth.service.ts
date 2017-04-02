@@ -35,9 +35,11 @@ export class AuthService {
                     console.log("Response : " + res.data.token);
                     if(autoLogin) {
                         localStorage.setItem('id_token', res.data.token);
+                        localStorage.setItem('user_id',res.data.user_id);
                     }
                     else {
                         sessionStorage.setItem('id_token',res.data.token);
+                        sessionStorage.setItem('user_id',res.data.user_id);
                     }
                     location.href = '/home';
                 },
@@ -82,24 +84,45 @@ export class AuthService {
         var localToken = localStorage.getItem('id_token');
         var sessionToken = sessionStorage.getItem('id_token');
 
-        if(localToken) {
+        var localID = localStorage.getItem('user_id');
+        var sessionID = sessionStorage.getItem('user_id');
+
+        if(localToken && localID) {
             localStorage.removeItem('id_token');
+            localStorage.removeItem('user_id');
+        }
+        else if (sessionToken && sessionID) {
+            sessionStorage.removeItem('id_token');
+            sessionStorage.removeItem('user_id');
         }
         else {
+            localStorage.removeItem('id_token');
+            localStorage.removeItem('user_id');
             sessionStorage.removeItem('id_token');
+            sessionStorage.removeItem('user_id');   
         }
     }
 
     getProfile() {
         //TODO add prefix value
-        let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:5000/api/v1/users" ;
-        //TODO token location & get token value
-        var token;
+        var userID = sessionStorage.getItem('user_id');
+        let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:5000/api/v1/users/"+userID ;
+        //TODO check token location & get token value
+        let token:String = sessionStorage.getItem('id_token');
+
+        console.log(url);
+        console.log(token);
+        
+        
         let headers = new Headers({
             'Content-Type': 'application/x-www-form-urlencoded',
-            'Accept': 'application/json',
-            'Authorization' : 'bearer '+token
+            'Accept': 'application/json'
         });
+
+         headers.append('Authorization',`bearer ${token}`)
+
+        console.log(headers);
+
         let options = new RequestOptions({
             headers: headers
         });
@@ -108,7 +131,7 @@ export class AuthService {
             .map(res => res.json())
             .subscribe(
                 res => {
-                    console.log("Response : " + res.data.token);
+                    console.log("Response : " + res.status);
                 },
 
                 error => {
