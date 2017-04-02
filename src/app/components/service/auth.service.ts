@@ -89,4 +89,32 @@ export class AuthService {
             sessionStorage.removeItem('id_token');
         }
     }
+
+    getProfile() {
+        //TODO add prefix value
+        let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:5000/api/v1/users" ;
+        //TODO token location & get token value
+        var token;
+        let headers = new Headers({
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Accept': 'application/json',
+            'Authorization' : 'bearer '+token
+        });
+        let options = new RequestOptions({
+            headers: headers
+        });
+
+        this.http.get(url,options)
+            .map(res => res.json())
+            .subscribe(
+                res => {
+                    console.log("Response : " + res.data.token);
+                },
+
+                error => {
+                    alert(error.text());
+                    console.log(error.text());
+                }
+                );
+    }
 }

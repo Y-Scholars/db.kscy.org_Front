@@ -9,7 +9,7 @@ export class SearchService {
     }
 
     search(keyword : String) {
-        let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:8888/archive/_search?size=3&q="+keyword;
+        let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:8888/archive/_search?size=200&q="+keyword;
 
         console.log(url);
 
@@ -24,14 +24,6 @@ export class SearchService {
         });
 
         return this.http.get(url)
-            .map(res => {
-                let obj = JSON.parse(res.text());
-                console.log(obj.hits.hits[0]._source.research_name);
-            })
-            .subscribe(
-                res => {
-
-                }
-            );
+            .map(res => res.text());
     }
 }
