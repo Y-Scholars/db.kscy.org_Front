@@ -37,6 +37,10 @@
     font-weight: bold;
     line-height: 63px;
     text-decoration: none;
+
+    margin: 0 auto;
+    background: none;
+    border: none;
 }
 
 .LoginTool .Menu>.Item.active>.Link {
