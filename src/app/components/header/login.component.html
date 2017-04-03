@@ -3,33 +3,16 @@
     <div class="Close"></div>
     <div class="Modal LoginTool tabWrap _recognized">
         <div class="Menu tabHeaders">
-            <div class="Item tabHeader active" data-tab-show-class="Login">
-                <a href="#" class="Link">로그인</a>
+            <div class="Item tabHeader" [class.active]="active" data-tab-show-class="Login">
+                <button (click)="tabClicked();" class="Link">로그인</button>
             </div>
-            <div class="Item tabHeader" data-tab-show-class="Join">
-                <a href="#" class="Link">5초 회원가입</a>
+            <div class="Item tabHeader" [class.active]="!active" data-tab-show-class="Join">
+                <button (click)="tabClicked();" class="Link">5초 회원가입</button>
             </div>
         </div>
 
         <div class="tabItems">
-            <div class="Login tabItem" style="display: none;">
-                <form onsubmit="$.OP.GG.ajax.member.login(this); return false;" action="https://www.op.gg/member/ajax2/login.json/">
-                    <div class="Content">
-                        <input type="hidden" name="referer" value="">
-
-                        <div class="InputWrap">
-                            <input type="text" class="Input" placeholder="이메일" name="identifier">
-                        </div>
-                        <div class="InputWrap">
-                            <input type="password" class="Input" placeholder="비밀번호" name="password">
-                        </div>
-                        <div class="ButtonWrap">
-                            <button type="submit" class="Button SemiRound Blue">로그인</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="Join tabItem" style="display: block;">
+            <div class="Login tabItem" [style.display]="(active) ? 'block' : 'none' ">
                 <form>
                     <div class="Content">
                         <div class="InputWrap">
@@ -42,13 +25,46 @@
                         </div>
                         <div class="RadioInputWrap">
                             <label class="Label">
-                    <input class="Input jcf-ignore" type="checkbox" name="autoLogin" [(ngModel)]="autoLogin">
-                    <span class="Text"> 자동로그인</span>
-                </label>
+                                <input class="Input jcf-ignore" type="checkbox" name="autoLogin" [(ngModel)]="autoLogin">
+                                <span class="Text"> 자동로그인</span>
+                            </label>
                         </div>
                     </div>
                     <div class="Footer">
                         <button class="Button Action" type="submit" (click)="onLogin()">로그인</button>
+                    </div>
+                </form>
+            </div>
+            <div class="Join tabItem" [style.display]="(active) ? 'none' : 'block' ">
+                <form>
+                    <div class="Content">
+                        <div class="InputWrap">
+                            <label class="Label" for="email">이름</label>
+                            <input type="text" class="Input" placeholder="이름 입력" name="email" id="username" [(ngModel)]="username">
+                        </div>
+                        <div class="InputWrap">
+                            <label class="Label" for="name">이메일</label>
+                            <input type="text" class="Input" placeholder="이메일주소 입력" name="name" id="email" [(ngModel)]="email">
+                        </div>
+                        <div class="InputWrap">
+                            <label class="Label" for="password">비밀번호</label>
+                            <input type="password" class="Input" placeholder="비밀번호 입력" name="password" id="password" [(ngModel)]="password">
+                        </div>
+                        <div class="InputWrap">
+                            <label class="Label" for="grade">학년</label>
+                            <input type="text" class="Input" placeholder="학년 입력 (숫자만)" name="grade" id="grade" [(ngModel)]="grade">
+                        </div>
+                        <div class="InputWrap">
+                            <label class="Label" for="birthday">생일</label>
+                            <input type="text" class="Input" placeholder="YYYYMMDD" name="birthday" id="birthday" [(ngModel)]="birthday">
+                        </div>
+                        <div class="InputWrap">
+                            <label class="Label" for="location">주소</label>
+                            <input type="text" class="Input" placeholder="주소 입력" name="location" id="location" [(ngModel)]="location">
+                        </div>
+                    </div>
+                    <div class="Footer">
+                        <button class="Button Action" type="submit" (click)="onSignup()">회원가입</button>
                     </div>
                 </form>
             </div>
