@@ -54,8 +54,13 @@ export class ResultListComponent implements OnInit {
                         }
                     }
                     */
-                    console.log(obj.hits.hits[0]._source.type);
-                    for(var i = 0 ; i < obj.hits.hits.length ; i++) {
+                    
+                    if(obj.hits.total == 0) {
+                        console.log("break");
+                        
+                    }
+                    else {
+                        for(var i = 0 ; i < obj.hits.hits.length ; i++) {
                         console.log(this.pr);
                         switch(obj.hits.hits[i]._source.type) {
                         case "연구논문 (Research Paper) 발표" : {
@@ -75,6 +80,8 @@ export class ResultListComponent implements OnInit {
                             break;
                         }
                     }
+                }
+                
                     }
                     this.count = obj.hits.hits.length;
                 }
