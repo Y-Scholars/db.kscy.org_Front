@@ -19,6 +19,14 @@ export class ResultListComponent implements OnInit {
 
     items = [];
 
+    best = [];
+    plan = [];
+    pres = [];
+    extr = [];
+
+    pl : number = 0;
+    pr : number = 0;
+    
     //TODO Result Bind
     ngOnInit() {
         let key = this.route.snapshot.queryParams["q"];
@@ -26,12 +34,47 @@ export class ResultListComponent implements OnInit {
             .subscribe(
                     res => {  
                     let obj = JSON.parse(res);
-                    console.log(obj.hits.hits[0]._source.research_name);
-                    for(var i = 0 ; i < 3 ; i++) {
-                        this.items[i] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name);
-                        if(i == obj.hits.hits.length-1) {
+                    /*
+                    switch(obj.hits.hits[i]._source.type) {
+                        case "연구논문 (Research Paper) 발표" : {
+                            if(this.pr>=3) {
+                                break;
+                            }
+                            this.pres[this.pr] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name);
+                            this.pl++;
                             break;
                         }
+                        case "연구계획 (Reserch Plan) 발표" : {
+                            if(this.pl>=3) {
+                                break;
+                            }
+                            this.plan[this.pl] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name);
+                            this.pl++;
+                            break;
+                        }
+                    }
+                    */
+                    console.log(obj.hits.hits[0]._source.type);
+                    for(var i = 0 ; i < obj.hits.hits.length ; i++) {
+                        console.log(this.pr);
+                        switch(obj.hits.hits[i]._source.type) {
+                        case "연구논문 (Research Paper) 발표" : {
+                            if(this.pr>=3) {
+                                break;
+                            }
+                            this.pres[this.pr] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name);
+                            this.pr++;
+                            break;
+                        }
+                        case "연구계획 (Reserch Plan) 발표" : {
+                            if(this.pl>=3) {
+                                break;
+                            }
+                            this.plan[this.pl] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name);
+                            this.pl++;
+                            break;
+                        }
+                    }
                     }
                     this.count = obj.hits.hits.length;
                 }
