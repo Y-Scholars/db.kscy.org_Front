@@ -52,11 +52,11 @@ export class AuthService {
     }
 
     loggedIn() {
-        console.log('checking token!!'); 
+        console.log('checking token!!');
 
         //Default isValie = true
         let isValid: boolean = true;
-        
+
         //look for token
         var localToken = localStorage.getItem('id_token');
         var sessionToken = sessionStorage.getItem('id_token');
@@ -99,7 +99,7 @@ export class AuthService {
             localStorage.removeItem('id_token');
             localStorage.removeItem('user_id');
             sessionStorage.removeItem('id_token');
-            sessionStorage.removeItem('user_id');   
+            sessionStorage.removeItem('user_id');
         }
     }
 
@@ -112,8 +112,8 @@ export class AuthService {
 
         console.log(url);
         console.log(token);
-        
-        
+
+
         let headers = new Headers({
             'Content-Type': 'application/x-www-form-urlencoded',
             'Accept': 'application/json'

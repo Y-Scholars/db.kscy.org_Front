@@ -18,7 +18,7 @@ import { ProfileComponent } from './components/user/profile/profile.component';
 import { LoginWindow } from './components/header/login.component';
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
-import { SignupService } from './components/service/signupService';
+import { SignupService } from './components/service/signup.service';
 import { SearchService } from './components/service/search.service';
 import { AuthGuard } from './components/service/auth-guard.service';
 import { AuthService } from './components/service/auth.service';
