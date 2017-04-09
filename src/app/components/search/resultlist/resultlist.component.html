@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="resultlist-container">
     <div class="location">
         <img src="http://www.riss.kr/commons/images/home.gif">
         <span class="lo">
@@ -33,7 +33,7 @@
                 <li *ngFor="let item of items">
                     <div class="cont">
                         <p class="txt">
-                            <a href="#">{{item.research_name}}
+                            <a href="{{item._id}}">{{item.research_name}}
                         </a>
                         </p>
                         <span class="etc">{{item.researcher_name}}</span>
@@ -57,7 +57,7 @@
                 <li *ngFor="let item of plan">
                     <div class="cont">
                         <p class="txt">
-                            <a href="#">{{item.research_name}}
+                            <a href="{{item._id}}">{{item.research_name}}
                         </a>
                         </p>
                         <span class="etc">{{item.researcher_name}}</span>
@@ -81,7 +81,7 @@
                 <li *ngFor="let item of pres">
                     <div class="cont">
                         <p class="txt">
-                            <a href="#">{{item.research_name}}
+                            <a href="{{item._id}}">{{item.research_name}}
                         </a>
                         </p>
                         <span class="etc">{{item.researcher_name}}</span>

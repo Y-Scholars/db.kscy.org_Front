@@ -1,13 +1,15 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 footer.main-footer {
+    position: relative;
     background: #424d66;
     color: #ffffff;
     padding: 30px;
     font-size: 16px;
     font-family: 'Nanum Gothic', serif;
-    height: inherit;
     bottom: 0px;
+    left: 0px;
     margin: 0px;
+    width: 100%;
 }
 
 footer.main-footer .container {

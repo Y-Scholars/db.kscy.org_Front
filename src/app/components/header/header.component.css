@@ -17,7 +17,7 @@ header.main-header {
     font-family: 'Nanum Barun Gothic', sans-serif;
 }
 
-.container {
+#header-container {
     display: block;
 }
 

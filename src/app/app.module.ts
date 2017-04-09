@@ -9,7 +9,8 @@ import {router} from "./app.router";
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { SideBarComponent } from './components/search/sidebar/sidebar.component'
+import { SideBarComponent } from './components/search/sidebar/sidebar.component';
+import { SearchComponent } from './components/search/search/search.component';
 import { ResultListComponent } from './components/search/resultlist/resultlist.component';
 import { ResultComponent } from './components/search/result/result.component';
 import { MainComponent } from './components/search/main/main.component';
@@ -34,7 +35,8 @@ import { AuthService } from './components/service/auth.service';
     MainComponent,
     SignUpComponent,
     ProfileComponent,
-    LoginWindow
+    LoginWindow,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

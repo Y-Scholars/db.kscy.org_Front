@@ -26,14 +26,16 @@ export class ResultListComponent implements OnInit {
 
     pl : number = 0;
     pr : number = 0;
-    
+
     //TODO Result Bind
     ngOnInit() {
         let key = this.route.snapshot.queryParams["q"];
         var res = this.searching.search(key)
             .subscribe(
-                    res => {  
+                    res => {
                     let obj = JSON.parse(res);
+
+                    console.log(obj);
                     /*
                     switch(obj.hits.hits[i]._source.type) {
                         case "연구논문 (Research Paper) 발표" : {
@@ -54,10 +56,10 @@ export class ResultListComponent implements OnInit {
                         }
                     }
                     */
-                    
+
                     if(obj.hits.total == 0) {
                         console.log("break");
-                        
+
                     }
                     else {
                         for(var i = 0 ; i < obj.hits.hits.length ; i++) {
@@ -67,7 +69,7 @@ export class ResultListComponent implements OnInit {
                             if(this.pr>=3) {
                                 break;
                             }
-                            this.pres[this.pr] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name);
+                            this.pres[this.pr] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
                             this.pr++;
                             break;
                         }
@@ -75,18 +77,18 @@ export class ResultListComponent implements OnInit {
                             if(this.pl>=3) {
                                 break;
                             }
-                            this.plan[this.pl] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name);
+                            this.plan[this.pl] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
                             this.pl++;
                             break;
                         }
                     }
                 }
-                
+
                     }
                     this.count = obj.hits.hits.length;
                 }
         );
-        
+
         this.keywords = key;
     }
 
