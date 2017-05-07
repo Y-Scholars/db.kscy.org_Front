@@ -21,6 +21,7 @@ import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import { SignupService } from './components/service/signup.service';
 import { SearchService } from './components/service/search.service';
+import { SearchOneService } from './components/service/search-one.service';
 import { AuthGuard } from './components/service/auth-guard.service';
 import { AuthService } from './components/service/auth.service';
 
@@ -46,7 +47,7 @@ import { AuthService } from './components/service/auth.service';
     BootstrapModalModule,
     RouterModule.forRoot(router)
     ],
-  providers: [SearchService,AuthService,AuthGuard],
+  providers: [SearchService,AuthService,AuthGuard, SearchOneService],
   bootstrap: [AppComponent],
   entryComponents: [
       LoginWindow,
