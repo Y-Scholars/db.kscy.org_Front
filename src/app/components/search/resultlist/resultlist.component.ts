@@ -14,6 +14,8 @@ export class ResultListComponent implements OnInit {
 
     constructor(private route: ActivatedRoute, private searching:SearchService) { }
 
+    input : String;
+
     keywords : String;
     count : number;
 
@@ -30,6 +32,7 @@ export class ResultListComponent implements OnInit {
     //TODO Result Bind
     ngOnInit() {
         let key = this.route.snapshot.queryParams["q"];
+        (<HTMLInputElement>document.getElementById("input")).value = key;
         var res = this.searching.search(key)
             .subscribe(
                     res => {
@@ -90,6 +93,11 @@ export class ResultListComponent implements OnInit {
         );
 
         this.keywords = key;
+    }
+
+    search() {
+        this.input = (<HTMLInputElement>document.getElementById("input")).value;
+        location.href = '/search?q=' + this.input;
     }
 
 }
