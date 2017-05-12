@@ -69,7 +69,7 @@ export class ResultListComponent implements OnInit {
                         console.log(this.pr);
                         switch(obj.hits.hits[i]._source.type) {
                         case "연구논문 (Research Paper) 발표" : {
-                            if(this.pr>=3) {
+                            if(this.pr>=2) {
                                 break;
                             }
                             this.pres[this.pr] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
@@ -77,7 +77,7 @@ export class ResultListComponent implements OnInit {
                             break;
                         }
                         case "연구계획 (Reserch Plan) 발표" : {
-                            if(this.pl>=3) {
+                            if(this.pl>=2) {
                                 break;
                             }
                             this.plan[this.pl] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);

@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SideBarComponent } from './components/search/sidebar/sidebar.component';
 import { SearchComponent } from './components/search/search/search.component';
 import { ResultListComponent } from './components/search/resultlist/resultlist.component';
+import { ResultContentsComponent} from './components/search/resultcontents/resultcontents.component';
 import { ResultComponent } from './components/search/result/result.component';
 import { MainComponent } from './components/search/main/main.component';
 import { SignUpComponent } from './components/user/signup/signup.component';
@@ -37,7 +38,8 @@ import { AuthService } from './components/service/auth.service';
     SignUpComponent,
     ProfileComponent,
     LoginWindow,
-    SearchComponent
+    SearchComponent,
+    ResultContentsComponent
   ],
   imports: [
     BrowserModule,
