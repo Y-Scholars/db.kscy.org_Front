@@ -25,16 +25,13 @@
     padding-left: 0px;
 }
 
-.side-nav>li>ul>li>a {
+.side-nav>li>a {
     width: auto;
     display: block;
     padding: 10px 15px 10px 38px;
-    text-decoration: none;
-    color: #999;
-}
-
-.side-nav>li>ul>li>a:hover {
     color: #fff;
+    text-decoration: none;
+    background-color: transparent;
 }
 
 #list>li {
@@ -51,6 +48,7 @@
 .nav>li>a:hover {
     text-decoration: none;
     background-color: #f7a50c;
+    color: #fff;
 }
 
 .navbar-nav>li>a {

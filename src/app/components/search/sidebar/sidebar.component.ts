@@ -12,5 +12,9 @@ export class SideBarComponent implements OnInit {
   ngOnInit() {
 
   }
-  
+
+  over() {
+
+  }
+
 }
