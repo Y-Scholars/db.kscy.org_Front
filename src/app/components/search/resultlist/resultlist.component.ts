@@ -22,9 +22,13 @@ export class ResultListComponent implements OnInit {
     items = [new Result("검색 결과가 없습니다.", "", "")];
 
     best = [new Result("검색 결과가 없습니다.", "", "")];
-    plan = [];
-    pres = [];
+    best_bit = [new Result("검색 결과가 없습니다.", "", "")];
+    plan = [new Result("검색 결과가 없습니다.", "", "")];
+    plan_bit = [new Result("검색 결과가 없습니다.", "", "")];
+    pres = [new Result("검색 결과가 없습니다.", "", "")];
+    pres_bit = [new Result("검색 결과가 없습니다.", "", "")];
     extr = [new Result("검색 결과가 없습니다.", "", "")];
+    extr_bit = [new Result("검색 결과가 없습니다.", "", "")];
 
     pl: number = 0;
     pr: number = 0;
@@ -41,30 +45,8 @@ export class ResultListComponent implements OnInit {
                 let obj = JSON.parse(res);
 
                 console.log(obj);
-                /*
-                switch(obj.hits.hits[i]._source.type) {
-                    case "연구논문 (Research Paper) 발표" : {
-                        if(this.pr>=3) {
-                            break;
-                        }
-                        this.pres[this.pr] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name);
-                        this.pl++;
-                        break;
-                    }
-                    case "연구계획 (Reserch Plan) 발표" : {
-                        if(this.pl>=3) {
-                            break;
-                        }
-                        this.plan[this.pl] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name);
-                        this.pl++;
-                        break;
-                    }
-                }
-                */
 
-                switch (this.search_type) {
-                    case "tonghap": {
-                        if (obj.hits.total == 0) {
+                if (obj.hits.total == 0) {
                     console.log("break");
                 }
                 else {
@@ -75,7 +57,7 @@ export class ResultListComponent implements OnInit {
                                 if (this.pr >= 3) {
                                     break;
                                 }
-                                this.pres[this.pr] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
+                                this.pres_bit[this.pr] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
                                 this.pr++;
                                 break;
                             }
@@ -83,41 +65,30 @@ export class ResultListComponent implements OnInit {
                                 if (this.pl >= 3) {
                                     break;
                                 }
-                                this.plan[this.pl] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
+                                this.plan_bit[this.pl] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
                                 this.pl++;
                                 break;
                             }
                         }
                     }
 
+                    this.count = obj.hits.hits.length;
+
                 }
-                        this.count = obj.hits.hits.length;
 
-                        console.log(this.pres.length);
-
-                        break;
+                var f = 0;
+                for (var i = 0; i < obj.hits.hits.length; i++) {
+                    if (obj.hits.hits[i]._source.type == "연구논문 (Research Paper) 발표") {
+                        this.pres[f] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
+                        f++;
                     }
+                }
 
-                    case "pres": {
-                        var t = 0;
-                        for (var i = 0; i < obj.hits.hits.length; i++) {
-                            if (obj.hits.hits[i]._source.type == "연구논문 (Research Paper) 발표") {
-                                this.pres[t] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
-                                t++;
-                            }
-                        }
-                        break;
-                    }
-
-                    case "plan": {
-                        var t = 0;
-                        for (var i = 0; i < obj.hits.hits.length; i++) {
-                            if (obj.hits.hits[i]._source.type == "연구계획 (Reserch Plan) 발표") {
-                                this.plan[t] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
-                                t++;
-                            }
-                        }
-                        break;
+                var t = 0;
+                for (var i = 0; i < obj.hits.hits.length; i++) {
+                    if (obj.hits.hits[i]._source.type == "연구계획 (Reserch Plan) 발표") {
+                        this.plan[t] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
+                        t++;
                     }
                 }
             }
@@ -125,13 +96,31 @@ export class ResultListComponent implements OnInit {
 
         this.keywords = key;
 
-        this.pres = this.pres.slice(0,2);
-
     }
 
     search() {
         this.input = (<HTMLInputElement>document.getElementById("input")).value;
         location.href = '/search?q=' + this.input;
+    }
+
+    toBest() {
+        this.search_type = "best";
+    }
+
+    toPres() {
+        this.search_type = "pres";
+    }
+
+    toPlan() {
+        this.search_type = "plan";
+    }
+
+    toExtr() {
+        this.search_type = "extr";
+    }
+
+    toTongHap() {
+        this.search_type = "tonghap";
     }
 
 }

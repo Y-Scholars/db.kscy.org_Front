@@ -35,11 +35,11 @@
         <div class="tonghap" *ngSwitchCase="'tonghap'">
             <div class="best_paper">
                 <h2 class="top">
-                    <a href="#"> 우수논문 </a>
+                    <a (click)="toBest()"> 우수논문 </a>
                 </h2>
 
                 <ul class="best_result">
-                    <li *ngFor="let item of best">
+                    <li *ngFor="let item of best_bit">
                         <div class="cont">
                             <p class="txt">
                                 <a href="{{item._id}}">{{item.research_name}}
@@ -61,11 +61,11 @@
 
             <div class="plan_paper">
                 <h2 class="top">
-                    <a href="#"> 연구계획 </a>
+                    <a (click)="toPlan()"> 연구계획 </a>
                 </h2>
 
                 <ul class="plans">
-                    <li *ngFor="let item of plan">
+                    <li *ngFor="let item of plan_bit">
                         <div class="cont">
                             <p class="txt">
                                 <a href="{{item._id}}">{{item.research_name}}
@@ -87,11 +87,11 @@
 
             <div class="pres_paper">
                 <h2 class="top">
-                    <a href="#"> 발표논문 </a>
+                    <a (click)="toPres()"> 발표논문 </a>
                 </h2>
 
                 <ul class="pres">
-                    <li *ngFor="let item of pres">
+                    <li *ngFor="let item of pres_bit">
                         <div class="cont">
                             <p class="txt">
                                 <a href="{{item._id}}">{{item.research_name}}
@@ -113,11 +113,11 @@
 
             <div class="extr_paper">
                 <h2 class="top">
-                    <a href="#"> 외부논문 </a>
+                    <a (click)="toExtr()"> 외부논문 </a>
                 </h2>
 
                 <ul class="extr">
-                    <li *ngFor="let item of extr">
+                    <li *ngFor="let item of extr_bit">
                         <div class="cont">
                             <p class="txt">
                                 <a href="{{item._id}}">{{item.research_name}}
@@ -137,11 +137,10 @@
 
             </div>
         </div>
-
         <div class="best" *ngSwitchCase="'best'">
             <div class="best_paper">
                 <h2 class="top">
-                    <a href="#"> 우수논문 </a>
+                    <a (click)="toTongHap()"> 우수논문 </a>
                 </h2>
 
                 <ul class="best_result">
@@ -165,14 +164,13 @@
 
             </div>
         </div>
-
         <div class="plan" *ngSwitchCase="'plan'">
             <div class="best_paper">
                 <h2 class="top">
-                    <a href="#"> 연구계획 </a>
+                    <a (click)="toTongHap()"> 연구계획 </a>
                 </h2>
 
-                <ul class="plans">
+                <ul class="best_result">
                     <li *ngFor="let item of plan">
                         <div class="cont">
                             <p class="txt">
@@ -197,7 +195,7 @@
         <div class="pres" *ngSwitchCase="'pres'">
             <div class="best_paper">
                 <h2 class="top">
-                    <a href="#"> 발표논문 </a>
+                    <a (click)="toTongHap()"> 발표논문 </a>
                 </h2>
 
                 <ul class="pres_result">
@@ -225,7 +223,7 @@
         <div class="extr" *ngSwitchCase="'extr'">
             <div class="best_paper">
                 <h2 class="top">
-                    <a href="#"> 외부논문 </a>
+                    <a (click)="toTongHap()"> 외부논문 </a>
                 </h2>
 
                 <ul class="extr_result">
