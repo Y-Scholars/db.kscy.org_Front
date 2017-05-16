@@ -31,101 +31,226 @@
         </div>
     </div>
 
-    <div class="resultContainer">
-        <div class="best_paper">
-            <h2 class="top">
-                <a href="#"> 우수논문 </a>
-            </h2>
+    <div class="resultContainer" [ngSwitch]="search_type">
+        <div class="tonghap" *ngSwitchCase="'tonghap'">
+            <div class="best_paper">
+                <h2 class="top">
+                    <a href="#"> 우수논문 </a>
+                </h2>
 
-            <ul class="best_result">
-                <li *ngFor="let item of items">
-                    <div class="cont">
-                        <p class="txt">
-                            <a href="{{item._id}}">{{item.research_name}}
+                <ul class="best_result">
+                    <li *ngFor="let item of best">
+                        <div class="cont">
+                            <p class="txt">
+                                <a href="{{item._id}}">{{item.research_name}}
                         </a>
-                        </p>
-                        <span class="etc">{{item.researcher_name}}</span>
-                        <p class="btm">
-                            <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
-                            <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');" class="link_st2">원문보기</a>
-                            <a href="#Redirect" onclick="contentView('Cbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b',-1)" class="link_st3">목차검색조회</a>
-                        </p>
-                    </div>
-                </li>
-            </ul>
+                            </p>
+                            <span class="etc">{{item.researcher_name}}</span>
+                            <p class="btm">
+                                <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
+                                <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');"
+                                    class="link_st2">원문보기</a>
+                                <a href="#Redirect" onclick="contentView('Cbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b',-1)"
+                                    class="link_st3">목차검색조회</a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
 
+            </div>
+
+            <div class="plan_paper">
+                <h2 class="top">
+                    <a href="#"> 연구계획 </a>
+                </h2>
+
+                <ul class="plans">
+                    <li *ngFor="let item of plan">
+                        <div class="cont">
+                            <p class="txt">
+                                <a href="{{item._id}}">{{item.research_name}}
+                        </a>
+                            </p>
+                            <span class="etc">{{item.researcher_name}}</span>
+                            <p class="btm">
+                                <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
+                                <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');"
+                                    class="link_st2">원문보기</a>
+                                <a href="#Redirect" onclick="contentView('Cbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b',-1)"
+                                    class="link_st3">목차검색조회</a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="pres_paper">
+                <h2 class="top">
+                    <a href="#"> 발표논문 </a>
+                </h2>
+
+                <ul class="pres">
+                    <li *ngFor="let item of pres">
+                        <div class="cont">
+                            <p class="txt">
+                                <a href="{{item._id}}">{{item.research_name}}
+                        </a>
+                            </p>
+                            <span class="etc">{{item.researcher_name}}</span>
+                            <p class="btm">
+                                <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
+                                <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');"
+                                    class="link_st2">원문보기</a>
+                                <a href="#Redirect" onclick="contentView('Cbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b',-1)"
+                                    class="link_st3">목차검색조회</a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="extr_paper">
+                <h2 class="top">
+                    <a href="#"> 외부논문 </a>
+                </h2>
+
+                <ul class="extr">
+                    <li *ngFor="let item of extr">
+                        <div class="cont">
+                            <p class="txt">
+                                <a href="{{item._id}}">{{item.research_name}}
+                        </a>
+                            </p>
+                            <span class="etc">{{item.researcher_name}}</span>
+                            <p class="btm">
+                                <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
+                                <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');"
+                                    class="link_st2">원문보기</a>
+                                <a href="#Redirect" onclick="contentView('Cbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b',-1)"
+                                    class="link_st3">목차검색조회</a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
         </div>
 
-        <div class="plan_paper">
-            <h2 class="top">
-                <a href="#"> 연구계획 </a>
-            </h2>
+        <div class="best" *ngSwitchCase="'best'">
+            <div class="best_paper">
+                <h2 class="top">
+                    <a href="#"> 우수논문 </a>
+                </h2>
 
-            <ul class="plans">
-                <li *ngFor="let item of plan">
-                    <div class="cont">
-                        <p class="txt">
-                            <a href="{{item._id}}">{{item.research_name}}
+                <ul class="best_result">
+                    <li *ngFor="let item of best">
+                        <div class="cont">
+                            <p class="txt">
+                                <a href="{{item._id}}">{{item.research_name}}
                         </a>
-                        </p>
-                        <span class="etc">{{item.researcher_name}}</span>
-                        <p class="btm">
-                            <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
-                            <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');" class="link_st2">원문보기</a>
-                            <a href="#Redirect" onclick="contentView('Cbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b',-1)" class="link_st3">목차검색조회</a>
-                        </p>
-                    </div>
-                </li>
-            </ul>
+                            </p>
+                            <span class="etc">{{item.researcher_name}}</span>
+                            <p class="btm">
+                                <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
+                                <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');"
+                                    class="link_st2">원문보기</a>
+                                <a href="#Redirect" onclick="contentView('Cbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b',-1)"
+                                    class="link_st3">목차검색조회</a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
 
+            </div>
         </div>
 
-        <div class="pres_paper">
-            <h2 class="top">
-                <a href="#"> 발표논문 </a>
-            </h2>
+        <div class="plan" *ngSwitchCase="'plan'">
+            <div class="best_paper">
+                <h2 class="top">
+                    <a href="#"> 연구계획 </a>
+                </h2>
 
-            <ul class="pres">
-                <li *ngFor="let item of pres">
-                    <div class="cont">
-                        <p class="txt">
-                            <a href="{{item._id}}">{{item.research_name}}
+                <ul class="plans">
+                    <li *ngFor="let item of plan">
+                        <div class="cont">
+                            <p class="txt">
+                                <a href="{{item._id}}">{{item.research_name}}
                         </a>
-                        </p>
-                        <span class="etc">{{item.researcher_name}}</span>
-                        <p class="btm">
-                            <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
-                            <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');" class="link_st2">원문보기</a>
-                            <a href="#Redirect" onclick="contentView('Cbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b',-1)" class="link_st3">목차검색조회</a>
-                        </p>
-                    </div>
-                </li>
-            </ul>
+                            </p>
+                            <span class="etc">{{item.researcher_name}}</span>
+                            <p class="btm">
+                                <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
+                                <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');"
+                                    class="link_st2">원문보기</a>
+                                <a href="#Redirect" onclick="contentView('Cbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b',-1)"
+                                    class="link_st3">목차검색조회</a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
 
+            </div>
         </div>
 
-        <div class="extr_paper">
-            <h2 class="top">
-                <a href="#"> 외부논문 </a>
-            </h2>
+        <div class="pres" *ngSwitchCase="'pres'">
+            <div class="best_paper">
+                <h2 class="top">
+                    <a href="#"> 발표논문 </a>
+                </h2>
 
-            <ul class="extr">
-                <li *ngFor="let item of extr">
-                    <div class="cont">
-                        <p class="txt">
-                            <a href="{{item._id}}">{{item.research_name}}
+                <ul class="pres_result">
+                    <li *ngFor="let item of pres">
+                        <div class="cont">
+                            <p class="txt">
+                                <a href="{{item._id}}">{{item.research_name}}
                         </a>
-                        </p>
-                        <span class="etc">{{item.researcher_name}}</span>
-                        <p class="btm">
-                            <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
-                            <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');" class="link_st2">원문보기</a>
-                            <a href="#Redirect" onclick="contentView('Cbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b',-1)" class="link_st3">목차검색조회</a>
-                        </p>
-                    </div>
-                </li>
-            </ul>
+                            </p>
+                            <span class="etc">{{item.researcher_name}}</span>
+                            <p class="btm">
+                                <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
+                                <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');"
+                                    class="link_st2">원문보기</a>
+                                <a href="#Redirect" onclick="contentView('Cbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b',-1)"
+                                    class="link_st3">목차검색조회</a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
 
+            </div>
+        </div>
+
+        <div class="extr" *ngSwitchCase="'extr'">
+            <div class="best_paper">
+                <h2 class="top">
+                    <a href="#"> 외부논문 </a>
+                </h2>
+
+                <ul class="extr_result">
+                    <li *ngFor="let item of extr">
+                        <div class="cont">
+                            <p class="txt">
+                                <a href="{{item._id}}">{{item.research_name}}
+                        </a>
+                            </p>
+                            <span class="etc">{{item.researcher_name}}</span>
+                            <p class="btm">
+                                <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
+                                <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');"
+                                    class="link_st2">원문보기</a>
+                                <a href="#Redirect" onclick="contentView('Cbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b',-1)"
+                                    class="link_st3">목차검색조회</a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div *ngSwitchDefault>
+            관리자에게 문의해주세요.
         </div>
     </div>
 </div>

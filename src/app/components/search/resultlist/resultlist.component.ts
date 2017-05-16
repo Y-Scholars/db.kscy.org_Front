@@ -19,15 +19,17 @@ export class ResultListComponent implements OnInit {
     keywords: String;
     count: number;
 
-    items = [new Result("검색 결과가 없습니다.","","")];
+    items = [new Result("검색 결과가 없습니다.", "", "")];
 
-    best = [new Result("검색 결과가 없습니다.","","")];
-    plan = [new Result("검색 결과가 없습니다.","","")];
-    pres = [new Result("검색 결과가 없습니다.","","")];
-    extr = [new Result("검색 결과가 없습니다.","","")];
+    best = [new Result("검색 결과가 없습니다.", "", "")];
+    plan = [];
+    pres = [];
+    extr = [new Result("검색 결과가 없습니다.", "", "")];
 
     pl: number = 0;
     pr: number = 0;
+
+    search_type = "tonghap";
 
     //TODO Result Bind
     ngOnInit() {
@@ -60,7 +62,9 @@ export class ResultListComponent implements OnInit {
                 }
                 */
 
-                if (obj.hits.total == 0) {
+                switch (this.search_type) {
+                    case "tonghap": {
+                        if (obj.hits.total == 0) {
                     console.log("break");
                 }
                 else {
@@ -87,11 +91,42 @@ export class ResultListComponent implements OnInit {
                     }
 
                 }
-                this.count = obj.hits.hits.length;
+                        this.count = obj.hits.hits.length;
+
+                        console.log(this.pres.length);
+
+                        break;
+                    }
+
+                    case "pres": {
+                        var t = 0;
+                        for (var i = 0; i < obj.hits.hits.length; i++) {
+                            if (obj.hits.hits[i]._source.type == "연구논문 (Research Paper) 발표") {
+                                this.pres[t] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
+                                t++;
+                            }
+                        }
+                        break;
+                    }
+
+                    case "plan": {
+                        var t = 0;
+                        for (var i = 0; i < obj.hits.hits.length; i++) {
+                            if (obj.hits.hits[i]._source.type == "연구계획 (Reserch Plan) 발표") {
+                                this.plan[t] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
+                                t++;
+                            }
+                        }
+                        break;
+                    }
+                }
             }
             );
 
         this.keywords = key;
+
+        this.pres = this.pres.slice(0,2);
+
     }
 
     search() {
