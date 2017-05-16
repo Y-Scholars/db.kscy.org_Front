@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {Router, RouterModule} from "@angular/router";
 import {router} from "./app.router";
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -25,7 +26,7 @@ import { SearchService } from './components/service/search.service';
 import { SearchOneService } from './components/service/search-one.service';
 import { AuthGuard } from './components/service/auth-guard.service';
 import { AuthService } from './components/service/auth.service';
-import { SharedService } from './components/service/shared.service';
+// import { SharedService } from './components/service/shared.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { SharedService } from './components/service/shared.service';
     BootstrapModalModule,
     RouterModule.forRoot(router)
     ],
-  providers: [SearchService,AuthService,AuthGuard, SearchOneService,SharedService],
+  providers: [SearchService,AuthService,AuthGuard, SearchOneService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent],
   entryComponents: [
       LoginWindow,
