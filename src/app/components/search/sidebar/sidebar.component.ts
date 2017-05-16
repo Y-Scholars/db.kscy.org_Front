@@ -9,12 +9,14 @@ import { ResultListComponent } from '../resultlist/resultlist.component';
 
 export class SideBarComponent implements OnInit {
 
+  
+
   ngOnInit() {
 
   }
 
   over() {
-
+    
   }
 
 }

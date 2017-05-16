@@ -1,15 +1,17 @@
 #search-container {
     width: 100%;
-    height: inherit;
+    height: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    background-color: #5e5e5e;
 }
 
 #left {
     width: 225px;
-    height: 100%;
+    height: auto;
     float: left;
+    background-color: #5e5e5e;
 }
 
 #right {

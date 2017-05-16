@@ -12,22 +12,22 @@ import { Result } from './result';
 export class ResultListComponent implements OnInit {
 
 
-    constructor(private route: ActivatedRoute, private searching:SearchService) { }
+    constructor(private route: ActivatedRoute, private searching: SearchService) { }
 
-    input : String;
+    input: String;
 
-    keywords : String;
-    count : number;
+    keywords: String;
+    count: number;
 
-    items = [];
+    items = [new Result("검색 결과가 없습니다.","","")];
 
-    best = [];
-    plan = [];
-    pres = [];
-    extr = [];
+    best = [new Result("검색 결과가 없습니다.","","")];
+    plan = [new Result("검색 결과가 없습니다.","","")];
+    pres = [new Result("검색 결과가 없습니다.","","")];
+    extr = [new Result("검색 결과가 없습니다.","","")];
 
-    pl : number = 0;
-    pr : number = 0;
+    pl: number = 0;
+    pr: number = 0;
 
     //TODO Result Bind
     ngOnInit() {
@@ -35,62 +35,61 @@ export class ResultListComponent implements OnInit {
         (<HTMLInputElement>document.getElementById("input")).value = key;
         var res = this.searching.search(key)
             .subscribe(
-                    res => {
-                    let obj = JSON.parse(res);
+            res => {
+                let obj = JSON.parse(res);
 
-                    console.log(obj);
-                    /*
-                    switch(obj.hits.hits[i]._source.type) {
-                        case "연구논문 (Research Paper) 발표" : {
-                            if(this.pr>=3) {
-                                break;
-                            }
-                            this.pres[this.pr] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name);
-                            this.pl++;
+                console.log(obj);
+                /*
+                switch(obj.hits.hits[i]._source.type) {
+                    case "연구논문 (Research Paper) 발표" : {
+                        if(this.pr>=3) {
                             break;
                         }
-                        case "연구계획 (Reserch Plan) 발표" : {
-                            if(this.pl>=3) {
-                                break;
-                            }
-                            this.plan[this.pl] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name);
-                            this.pl++;
+                        this.pres[this.pr] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name);
+                        this.pl++;
+                        break;
+                    }
+                    case "연구계획 (Reserch Plan) 발표" : {
+                        if(this.pl>=3) {
                             break;
                         }
+                        this.plan[this.pl] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name);
+                        this.pl++;
+                        break;
                     }
-                    */
+                }
+                */
 
-                    if(obj.hits.total == 0) {
-                        console.log("break");
-
-                    }
-                    else {
-                        for(var i = 0 ; i < obj.hits.hits.length ; i++) {
+                if (obj.hits.total == 0) {
+                    console.log("break");
+                }
+                else {
+                    for (var i = 0; i < obj.hits.hits.length; i++) {
                         console.log(this.pr);
-                        switch(obj.hits.hits[i]._source.type) {
-                        case "연구논문 (Research Paper) 발표" : {
-                            if(this.pr>=2) {
+                        switch (obj.hits.hits[i]._source.type) {
+                            case "연구논문 (Research Paper) 발표": {
+                                if (this.pr >= 3) {
+                                    break;
+                                }
+                                this.pres[this.pr] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
+                                this.pr++;
                                 break;
                             }
-                            this.pres[this.pr] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
-                            this.pr++;
-                            break;
-                        }
-                        case "연구계획 (Reserch Plan) 발표" : {
-                            if(this.pl>=2) {
+                            case "연구계획 (Reserch Plan) 발표": {
+                                if (this.pl >= 3) {
+                                    break;
+                                }
+                                this.plan[this.pl] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
+                                this.pl++;
                                 break;
                             }
-                            this.plan[this.pl] = new Result(obj.hits.hits[i]._source.research_name,obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
-                            this.pl++;
-                            break;
                         }
                     }
-                }
 
-                    }
-                    this.count = obj.hits.hits.length;
                 }
-        );
+                this.count = obj.hits.hits.length;
+            }
+            );
 
         this.keywords = key;
     }
