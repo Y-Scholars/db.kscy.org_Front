@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {Router, RouterModule} from "@angular/router";
 import {router} from "./app.router";
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -49,9 +48,9 @@ import { AuthService } from './components/service/auth.service';
     HttpModule,
     ModalModule.forRoot(),
     BootstrapModalModule,
-    RouterModule.forRoot(router)
+    RouterModule.forRoot(router, {useHash:true})
     ],
-  providers: [SearchService,AuthService,AuthGuard, SearchOneService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [SearchService,AuthService,AuthGuard, SearchOneService],
   bootstrap: [AppComponent],
   entryComponents: [
       LoginWindow,
