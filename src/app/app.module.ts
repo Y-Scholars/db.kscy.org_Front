@@ -25,6 +25,7 @@ import { SearchService } from './components/service/search.service';
 import { SearchOneService } from './components/service/search-one.service';
 import { AuthGuard } from './components/service/auth-guard.service';
 import { AuthService } from './components/service/auth.service';
+import { SharedService } from './components/service/shared.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { AuthService } from './components/service/auth.service';
     BootstrapModalModule,
     RouterModule.forRoot(router)
     ],
-  providers: [SearchService,AuthService,AuthGuard, SearchOneService],
+  providers: [SearchService,AuthService,AuthGuard, SearchOneService,SharedService],
   bootstrap: [AppComponent],
   entryComponents: [
       LoginWindow,
