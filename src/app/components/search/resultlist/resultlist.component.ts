@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { SearchService } from '../../service/search.service';
 import { Result } from './result';
+import { SharedService } from '../../service/shared.service';
 
 @Component({
     selector: 'resultlist-component',
@@ -12,7 +13,7 @@ import { Result } from './result';
 export class ResultListComponent implements OnInit {
 
 
-    constructor(private route: ActivatedRoute, private searching: SearchService) { }
+    constructor(private route: ActivatedRoute, private searching: SearchService, private shared: SharedService) { }
 
     input: String;
 
@@ -33,10 +34,17 @@ export class ResultListComponent implements OnInit {
     pl: number = 0;
     pr: number = 0;
 
-    search_type = "tonghap";
+    search_type : String = "tonghap";
 
     //TODO Result Bind
     ngOnInit() {
+        this.shared.langUpdated.subscribe(
+      (lang) => {
+        this.search_type = this.shared.getActive();
+      }
+    );
+        this.search_type = this.shared.getActive();
+        console.log(this.search_type);
         let key = this.route.snapshot.queryParams["q"];
         (<HTMLInputElement>document.getElementById("input")).value = key;
         var res = this.searching.search(key)
@@ -95,7 +103,6 @@ export class ResultListComponent implements OnInit {
             );
 
         this.keywords = key;
-
     }
 
     search() {
@@ -105,6 +112,7 @@ export class ResultListComponent implements OnInit {
 
     toBest() {
         this.search_type = "best";
+        console.log(this.shared.getActive());
     }
 
     toPres() {
