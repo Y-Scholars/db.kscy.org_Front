@@ -16,8 +16,7 @@
     position: relative;
     width: 100vh;
     height: 100%;
-    right: 0;
-    float: right;
+    left: 225px;
 }
 
 .container-div {

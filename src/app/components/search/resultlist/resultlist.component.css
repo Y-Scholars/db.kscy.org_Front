@@ -2,8 +2,7 @@
     background: #f8f8f8;
     font-family: 'Nanum Barun Gothic', sans-serif;
     text-align: left;
-    margin-left: 73px;
-    width: 100%;
+    width: 100vw;
     height: auto;
     min-height: 770px;
 }
@@ -150,7 +149,7 @@ li {
     color: #000000;
     background-color: transparent;
     ime-mode: active;
-    outline: none
+    outline: none;
 }
 
 .search_btn {

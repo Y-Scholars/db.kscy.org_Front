@@ -1,5 +1,6 @@
 #sidebar-container {
     width: 225px;
+    height: 100%;
     float: left;
     position: absolute;
     text-align: center;
