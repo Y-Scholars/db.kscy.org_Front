@@ -1,10 +1,10 @@
 <div class="container" id="sidebar-container">
     <ul class="nav navbar-nav side-nav" id="list">
         <!-- <li> <img class="logo" src="./assets/img/logo.png"> </li> -->
-        <li id="tonghap"><a href="" title="통합검색">통합검색</a></li>
-        <li><a href="">우수논문</a></li>
-        <li><a href="">연구계획</a></li>
-        <li><a href="">KSCY발표논문</a></li>
-        <li><a href="">외부 논문</a></li>
+        <li [class.active]="search_type == 'tonghap'"><a (click)="toTongHap()" title="통합검색">통합검색</a></li>
+        <li [class.active]="search_type == 'best'"><a (click)="toBest()">우수논문</a></li>
+        <li [class.active]="search_type == 'plan'"><a (click)="toPlan()">연구계획</a></li>
+        <li [class.active]="search_type == 'pres'"><a (click)="toPres()">KSCY발표논문</a></li>
+        <li [class.active]="search_type == 'extr'"><a (click)="toExtr()">외부 논문</a></li>
     </ul>
 </div>
