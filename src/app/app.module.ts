@@ -48,7 +48,7 @@ import { AuthService } from './components/service/auth.service';
     HttpModule,
     ModalModule.forRoot(),
     BootstrapModalModule,
-    RouterModule.forRoot(router, {useHash:true})
+    RouterModule.forRoot(router)
     ],
   providers: [SearchService,AuthService,AuthGuard, SearchOneService],
   bootstrap: [AppComponent],
