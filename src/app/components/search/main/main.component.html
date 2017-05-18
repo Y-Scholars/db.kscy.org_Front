@@ -7,7 +7,7 @@
     </div>
     <div class="search">
         <span class="green_window">
-                <input class="input_text" id="keyword" name="query" type="text" title="검색어 입력" maxlength="255"  tabindex="1" accesskey="s" style="ime-mode:active;" autocomplete="off"  />
+                <input class="input_text" (keyup.enter)="search()" id="keyword" name="query" type="text" title="검색어 입력" maxlength="255"  tabindex="1" accesskey="s" style="ime-mode:active;" autocomplete="off"  />
             </span>
         <button class="search_btn" type="submit" title="검색" tabindex="3" (click)="search()">
                 <img class="search_img" src="./assets/img/search.png">
