@@ -25,6 +25,7 @@ export const router: Routes = [
         path: 'profile', component: ProfileComponent,
         canActivate: [AuthGuard]
     }, {
-        path: ':prefix', component  : ResultComponent
+        path: ':prefix', component  : ResultComponent,
+        canActivate: [AuthGuard]
     }
 ];
