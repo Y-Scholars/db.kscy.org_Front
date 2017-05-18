@@ -1,5 +1,6 @@
-import {Injectable} from '@angular/core';
-import {Http,Response,Headers,
+import { Injectable } from '@angular/core';
+import {
+    Http, Response, Headers,
     RequestOptions
 } from "@angular/http";
 import {
@@ -15,9 +16,9 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthService {
 
-    constructor(private http: Http, private router: Router) {}
+    constructor(private http: Http, private router: Router) { }
 
-    login(email: String, password: String,autoLogin:boolean) {
+    login(email: String, password: String, autoLogin: boolean) {
         let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:5000/api/v1/auth";
         let body = "email=" + email + "&password=" + password;
         let headers = new Headers({
@@ -31,24 +32,20 @@ export class AuthService {
         this.http.post(url, body, options)
             .map(res => res.json())
             .subscribe(
-                res => {
-                    console.log("Response : " + res.data.token);
-                    if(autoLogin) {
-                        localStorage.setItem('id_token', res.data.token);
-                        localStorage.setItem('user_id',res.data.user_id);
-                    }
-                    else {
-                        sessionStorage.setItem('id_token',res.data.token);
-                        sessionStorage.setItem('user_id',res.data.user_id);
-                    }
-                    location.href = '/home';
-                },
+            res => {
+                console.log("Response : " + res.data.token);
 
-                error => {
-                    alert(error.text());
-                    console.log(error.text());
-                }
-                );
+                sessionStorage.setItem('id_token', res.data.token);
+                sessionStorage.setItem('user_id', res.data.user_id);
+
+                location.href = '/home';
+            },
+
+            error => {
+                alert(error.text());
+                console.log(error.text());
+            }
+            );
     }
 
     loggedIn() {
@@ -58,14 +55,10 @@ export class AuthService {
         let isValid: boolean = true;
 
         //look for token
-        var localToken = localStorage.getItem('id_token');
         var sessionToken = sessionStorage.getItem('id_token');
 
         //Token Exist
-        if (localToken) {
-            console.log("autoLoggedIn");
-        }
-        else if(sessionToken) {
+        if (sessionToken) {
             console.log("sessionLoggedIn");
         }
 
@@ -87,7 +80,7 @@ export class AuthService {
         var localID = localStorage.getItem('user_id');
         var sessionID = sessionStorage.getItem('user_id');
 
-        if(localToken && localID) {
+        if (localToken && localID) {
             localStorage.removeItem('id_token');
             localStorage.removeItem('user_id');
         }
@@ -106,9 +99,9 @@ export class AuthService {
     getProfile() {
         //TODO add prefix value
         var userID = sessionStorage.getItem('user_id');
-        let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:5000/api/v1/users/"+userID ;
+        let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:5000/api/v1/users/" + userID;
         //TODO check token location & get token value
-        let token:String = sessionStorage.getItem('id_token');
+        let token: String = sessionStorage.getItem('id_token');
 
         console.log(url);
         console.log(token);
@@ -119,7 +112,7 @@ export class AuthService {
             'Accept': 'application/json'
         });
 
-         headers.append('Authorization',`bearer ${token}`)
+        headers.append('Authorization', `bearer ${token}`)
 
         console.log(headers);
 
@@ -127,17 +120,17 @@ export class AuthService {
             headers: headers
         });
 
-        this.http.get(url,options)
+        this.http.get(url, options)
             .map(res => res.json())
             .subscribe(
-                res => {
-                    console.log("Response : " + res.status);
-                },
+            res => {
+                console.log("Response : " + res.status);
+            },
 
-                error => {
-                    alert(error.text());
-                    console.log(error.text());
-                }
-                );
+            error => {
+                alert(error.text());
+                console.log(error.text());
+            }
+            );
     }
 }

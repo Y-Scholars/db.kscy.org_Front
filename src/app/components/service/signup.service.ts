@@ -22,7 +22,9 @@ export class SignupService {
                 console.log('json body:', json_body);
                 if(json_body.code == 201) {
                     alert("회원가입되었습니다.");
+                    window.location.reload();
                 }
-            });
+            }
+            );
     }
 }
