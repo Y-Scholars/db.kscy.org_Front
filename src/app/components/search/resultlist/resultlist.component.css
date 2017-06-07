@@ -185,7 +185,7 @@ li {
 .search {
     text-align: center;
     position: relative;
-    top: 0px;
+    top: -5px;
     right: 240px;
     float: right;
 }
