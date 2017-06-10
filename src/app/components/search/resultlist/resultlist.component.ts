@@ -20,16 +20,15 @@ export class ResultListComponent implements OnInit {
     keywords: String;
     count: number;
 
-    items = [new Result("검색 결과가 없습니다.", "", "")];
-
-    best = [new Result("검색 결과가 없습니다.", "", "")];
-    best_bit = [new Result("검색 결과가 없습니다.", "", "")];
-    plan = [new Result("검색 결과가 없습니다.", "", "")];
-    plan_bit = [new Result("검색 결과가 없습니다.", "", "")];
-    pres = [new Result("검색 결과가 없습니다.", "", "")];
-    pres_bit = [new Result("검색 결과가 없습니다.", "", "")];
-    extr = [new Result("검색 결과가 없습니다.", "", "")];
-    extr_bit = [new Result("검색 결과가 없습니다.", "", "")];
+    items = [new Result("검색 결과가 없습니다.", "", "","")];
+    best = [new Result("검색 결과가 없습니다.", "", "","")];
+    best_bit = [new Result("검색 결과가 없습니다.", "", "","")];
+    plan = [new Result("검색 결과가 없습니다.", "", "","")];
+    plan_bit = [new Result("검색 결과가 없습니다.", "", "","")];
+    pres = [new Result("검색 결과가 없습니다.", "", "","")];
+    pres_bit = [new Result("검색 결과가 없습니다.", "", "","")];
+    extr = [new Result("검색 결과가 없습니다.", "", "","")];
+    extr_bit = [new Result("검색 결과가 없습니다.", "", "","")];
 
     pl: number = 0;
     pr: number = 0;
@@ -60,12 +59,13 @@ export class ResultListComponent implements OnInit {
                 else {
                     for (var i = 0; i < obj.hits.hits.length; i++) {
                         console.log(this.pr);
+                        console.log(obj.hits.hits[i]._source.org);
                         switch (obj.hits.hits[i]._source.type) {
                             case "연구논문 (Research Paper) 발표": {
                                 if (this.pr >= 3) {
                                     break;
                                 }
-                                this.pres_bit[this.pr] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
+                                this.pres_bit[this.pr] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id,obj.hits.hits[i]._source.org);
                                 this.pr++;
                                 break;
                             }
@@ -73,7 +73,7 @@ export class ResultListComponent implements OnInit {
                                 if (this.pl >= 3) {
                                     break;
                                 }
-                                this.plan_bit[this.pl] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
+                                this.plan_bit[this.pl] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id,obj.hits.hits[i]._source.org);
                                 this.pl++;
                                 break;
                             }
@@ -87,7 +87,7 @@ export class ResultListComponent implements OnInit {
                 var f = 0;
                 for (var i = 0; i < obj.hits.hits.length; i++) {
                     if (obj.hits.hits[i]._source.type == "연구논문 (Research Paper) 발표") {
-                        this.pres[f] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
+                        this.pres[f] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id,obj.hits.hits[i]._source.org);
                         f++;
                     }
                 }
@@ -95,7 +95,7 @@ export class ResultListComponent implements OnInit {
                 var t = 0;
                 for (var i = 0; i < obj.hits.hits.length; i++) {
                     if (obj.hits.hits[i]._source.type == "연구계획 (Reserch Plan) 발표") {
-                        this.plan[t] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id);
+                        this.plan[t] = new Result(obj.hits.hits[i]._source.research_name, obj.hits.hits[i]._source.researcher_name, obj.hits.hits[i]._id,obj.hits.hits[i]._source.org);
                         t++;
                     }
                 }
