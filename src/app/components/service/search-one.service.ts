@@ -26,4 +26,23 @@ export class SearchOneService {
         return this.http.get(url)
             .map(res => res.text());
     }
+
+    getStudent(team_id : String) {
+        let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:8888/researcher/_search?q=team_id:"+team_id;
+
+        console.log(url);
+
+        let headers = new Headers({
+            'Content-Type': 'application/json' ,
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+            'Access-Control-Allow-Headers':'X-Requested-With'
+        });
+        let options = new RequestOptions({
+            headers: headers
+        });
+
+        return this.http.get(url)
+            .map(res => res.text());
+    }
 }

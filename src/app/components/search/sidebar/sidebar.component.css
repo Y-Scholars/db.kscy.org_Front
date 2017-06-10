@@ -7,26 +7,44 @@
     font-family: 'Nanum Barun Gothic', sans-serif;
     margin: 0px;
     padding: 0px;
-    background-color: #003366;
+    background-color: #404040;
 }
+
 .logo {
+    height: 150px;
     background-color: #003366;
 }
 
 img {
+    padding-top: 39px;
     max-width: 225px;
+}
+
+.text {
+    background: url(./assets/img/back.png);
+    padding-top: 20px;
+    background-repeat: no-repeat;
+    font-size: 15pt;
+    color: white;
+    height: 80px;
+    background-color: #003366;
+}
+
+.texts {
+    padding-left: 0px;
+    width: 225px;
 }
 
 .side-nav {
     position: absolute;
-    top: 169px;
+    top: 220px;
     left: 225px;
     width: 225px;
     margin-left: -225px;
     border: none;
     border-radius: 0;
     overflow-y: auto;
-    background-color: #003366;
+    background-color: #404040;
     bottom: 0;
     overflow-x: hidden;
     height: inherit;
@@ -54,8 +72,7 @@ img {
 .nav>li>a:hover,
 .active {
     text-decoration: none;
-    background-color: #f7a50c;
-    color: #fff;
+    color: #003366;
 }
 
 .navbar-nav>li>a {

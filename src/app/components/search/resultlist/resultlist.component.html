@@ -1,11 +1,5 @@
 <div class="container" id="resultlist-container">
     <div class="line">
-    </div>
-    <div class="location">
-        <img id="home" src="http://www.riss.kr/commons/images/home.gif">
-        <span class="lo">
-            통합검색
-        </span>
         <div class="search">
             <span class="green_window">
                     <input class="input_text" (keyup.enter)="search()" id="input" name="query" type="text" title="검색어 입력" maxlength="255"  tabindex="1" accesskey="s" style="ime-mode:active;" autocomplete="off"  />
@@ -14,6 +8,12 @@
                 <img class="search_img" src="./assets/img/search.png">
             </button>
         </div>
+    </div>
+    <div class="location">
+        <img id="home" src="http://www.riss.kr/commons/images/home.gif">
+        <span class="lo">
+            통합검색
+        </span>
     </div>
 
     <div class="keyword">
@@ -47,7 +47,7 @@
                                 <a href="{{item._id}}">{{item.research_name}}
                         </a>
                             </p>
-                            <span class="etc">{{item.researcher_name}}</span>
+                            <span class="etc">{{item.org}} {{item.researcher_name}}</span>
                             <p class="btm">
                                 <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
                                 <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');"
@@ -73,7 +73,7 @@
                                 <a href="{{item._id}}">{{item.research_name}}
                         </a>
                             </p>
-                            <span class="etc">{{item.researcher_name}}</span>
+                            <span class="etc">{{item.org}} {{item.researcher_name}}</span>
                             <p class="btm">
                                 <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
                                 <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');"
@@ -99,7 +99,7 @@
                                 <a href="{{item._id}}">{{item.research_name}}
                         </a>
                             </p>
-                            <span class="etc">{{item.researcher_name}}</span>
+                            <span class="etc">{{item.org}} {{item.researcher_name}}</span>
                             <p class="btm">
                                 <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
                                 <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');"
@@ -125,7 +125,7 @@
                                 <a href="{{item._id}}">{{item.research_name}}
                         </a>
                             </p>
-                            <span class="etc">{{item.researcher_name}}</span>
+                            <span class="etc">{{item.org}} {{item.researcher_name}}</span>
                             <p class="btm">
                                 <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
                                 <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');"
@@ -152,7 +152,7 @@
                                 <a href="{{item._id}}">{{item.research_name}}
                         </a>
                             </p>
-                            <span class="etc">{{item.researcher_name}}</span>
+                            <span class="etc">{{item.org}} {{item.researcher_name}}</span>
                             <p class="btm">
                                 <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
                                 <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');"
@@ -179,7 +179,7 @@
                                 <a href="{{item._id}}">{{item.research_name}}
                         </a>
                             </p>
-                            <span class="etc">{{item.researcher_name}}</span>
+                            <span class="etc">{{item.org}} {{item.researcher_name}}</span>
                             <p class="btm">
                                 <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
                                 <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');"
@@ -207,7 +207,7 @@
                                 <a href="{{item._id}}">{{item.research_name}}
                         </a>
                             </p>
-                            <span class="etc">{{item.researcher_name}}</span>
+                            <span class="etc">{{item.org}} {{item.researcher_name}}</span>
                             <p class="btm">
                                 <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
                                 <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');"
@@ -235,7 +235,7 @@
                                 <a href="{{item._id}}">{{item.research_name}}
                         </a>
                             </p>
-                            <span class="etc">{{item.researcher_name}}</span>
+                            <span class="etc">{{item.org}} {{item.researcher_name}}</span>
                             <p class="btm">
                                 <a href="#Redirect" onclick="quickView('Qbe54d9b8bc7cdb09_0','e61cff2e339b06eeffe0bdc3ef48d419')" class="link_st1">간략보기</a>
                                 <a href="#redirect" onclick="ButtonSet.fulltextDownload('e61cff2e339b06eeffe0bdc3ef48d419','be54d9b8bc7cdb09','f1a8c7a1de0e08b8','a8cb3aaead67ab5b');"

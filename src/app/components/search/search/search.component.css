@@ -4,14 +4,14 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #5e5e5e;
+    background-color: #444;
 }
 
 #left {
     width: 225px;
     height: auto;
     float: left;
-    background-color: #5e5e5e;
+    background-color: #444;
 }
 
 #right {
