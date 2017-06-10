@@ -7,19 +7,26 @@
     font-family: 'Nanum Barun Gothic', sans-serif;
     margin: 0px;
     padding: 0px;
-    background-color: #5e5e5e;
+    background-color: #003366;
+}
+.logo {
+    background-color: #003366;
+}
+
+img {
+    max-width: 225px;
 }
 
 .side-nav {
     position: absolute;
-    top: 0px;
+    top: 169px;
     left: 225px;
     width: 225px;
     margin-left: -225px;
     border: none;
     border-radius: 0;
     overflow-y: auto;
-    background-color: #5e5e5e;
+    background-color: #003366;
     bottom: 0;
     overflow-x: hidden;
     height: inherit;
@@ -41,11 +48,6 @@
 #list>li {
     width: 225px;
     list-style-type: none;
-}
-
-.logo {
-    width: 225px;
-    height: 200px;
 }
 
 .nav>li>a:focus,

@@ -1,8 +1,7 @@
-#container {
+.container {
     background: #f8f8f8;
     font-family: 'Nanum Barun Gothic', sans-serif;
     text-align: left;
-    margin-left: 225px;
     width: 100%;
     height: auto;
     min-height: 770px;
