@@ -12,7 +12,7 @@
 }
 
 header.main-header {
-    background: #424d66;
+    background: #f3f3f3;
     height: 54px;
     font-family: 'Nanum Barun Gothic', sans-serif;
 }
@@ -51,12 +51,12 @@ header.main-header {
 }
 
 .header-ul-li button:hover {
-    color: #ffffff;
+    color: #424d66;
 }
 
 .header-span a {
     text-decoration: none;
-    color: #ffffff;
+    color: #424d66;
     font-family: 'Nanum Barun Gothic', sans-serif;
     font-weight: 700;
     font-size: 16pt;
