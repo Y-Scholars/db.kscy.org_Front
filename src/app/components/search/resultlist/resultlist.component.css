@@ -7,6 +7,11 @@
     min-height: 770px;
 }
 
+.line {
+    height: 120px;
+    width: 100vw;
+    background-color: #003366;
+}
 .location {
     background: url(http://www.riss.kr/commons/images/loc_line.gif) 0 100% repeat-x;
     height: 45px;

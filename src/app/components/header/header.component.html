@@ -9,9 +9,7 @@
         }
     </script>
     <div class="container" id="header-container">
-        <span class="header-span">
-            <a href="">Y Schola</a>
-        </span>
+        <img id="header-logo" href="" src="./assets/img/main-logo.png">
         <ul class="header-ul">
             <li class="header-ul-li" *ngIf="!loggedIn"><button (click)="loginPopup()"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</button></li>
             <li class="header-ul-li" *ngIf="loggedIn"><button (click)="logout()"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</button></li>

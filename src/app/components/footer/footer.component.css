@@ -1,8 +1,14 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-footer.main-footer {
+.main-footer {
+    display: inline-block;
+    float: none;
+    width: 100%;
+}
+
+.sub-footer {
     position: relative;
     background: #f3f3f3;
-    color: #000000;
+    color: #333333;
     padding: 30px;
     font-size: 16px;
     font-family: 'Nanum Gothic', serif;
@@ -10,16 +16,19 @@ footer.main-footer {
     left: 0px;
     margin: 0px;
     width: 100%;
+    display: -webkit-box;
 }
 
-footer.main-footer .container {
+.main-footer .container {
     display: inline-block;
+    width: 700px;
 }
 
 .footer-developer p {
     display: inline-block;
     float: left;
     margin: 0px;
+    font-weight: bold;
 }
 
 .footer-developer ul {
@@ -40,10 +49,6 @@ footer.main-footer .container {
     padding-right: 5px;
 }
 
-.footer-copyright {
-    padding-top: 30px;
-}
-
 .footer-developer,
 .footer-address,
 .footer-contacts {
@@ -57,4 +62,40 @@ footer.main-footer .container {
     margin-top: 0px;
     margin-bottom: 0px;
     display: inline-block;
+}
+
+#footer-logo1 {
+    height: 30px;
+    margin: 10px;
+}
+
+#footer-logo2 {
+    height: 35px;
+    margin: 10px;
+}
+
+#footer-logo3 {
+    height: 40px;
+    margin: 10px;
+}
+
+#logo-list-footer {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.footer-copyright {
+    width: 100%;
+    background: #404040;
+    color: #ffffff;
+    padding: 30px;
+    text-align: center;
+    line-height: 100%;
+    vertical-align: middle;
+}
+
+.footer-copyright p{
+    margin: 0px;
+    font-size: 12pt;
 }

@@ -1,0 +1,57 @@
+#result-container {
+    width: 100%;
+    height: inherit;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#left {
+    width: 225px;
+    height: 100%;
+    float: left;
+}
+
+#right {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    margin-left: 225px;
+}
+
+.container-div {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.location {
+    background: url(http://www.riss.kr/commons/images/loc_line.gif) 0 100% repeat-x;
+    height: 45px;
+    padding: 7px 0;
+    width: 100%;
+    margin: 0;
+}
+
+.location>span {
+    background: #5f5f5f;
+    font-size: 14px;
+    background: url(http://www.riss.kr/commons/images/lo_bg.gif) 0 0 no-repeat;
+    display: inline-block;
+    padding-left: 24px;
+    height: 28px;
+    line-height: 28px;
+    margin-left: 10px;
+}
+
+#home {
+    margin: 5px;
+    margin-left: 20px;
+    border: 0;
+    vertical-align: top;
+}
+
+div {
+    display: block;
+}
