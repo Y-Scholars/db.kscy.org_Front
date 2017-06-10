@@ -6,6 +6,7 @@
 
 # dependencies
 /node_modules
+yscholar_aws.pem
 
 # IDEs and editors
 /.idea
