@@ -136,22 +136,22 @@ li {
     display: -moz-inline-block;
     display: -moz-inline-box;
     display: inline-block;
-    width: 300px;
+    width: 400px;
     height: 36px;
-    border: 3px solid #424d66;
+    border: 3px solid #fff;
     position: absolute;
     right: 36px;
 }
 
 .input_text {
-    width: 276px;
+    width: 376px;
     height: 32px;
     border: 0;
     padding: 0px 8px 0px 8px;
     line-height: 36px;
     font-weight: bold;
     font-size: 16px;
-    color: #000000;
+    color: #fff;
     background-color: transparent;
     ime-mode: active;
     outline: none;
@@ -162,11 +162,11 @@ li {
     left: 0px;
     width: 36px;
     height: 36px;
-    background-color: #424d66;
-    border-bottom: 3px solid #424d66;
-    border-right: 3px solid #424d66;
-    border-top: 3px solid #424d66;
-    border-left: 1px solid #424d66;
+    background-color: #fff;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+    border-top: 3px solid #fff;
+    border-left: 1px solid #fff;
     -o-transition: background-color .2s ease-in;
     -moz-transition: background-color .2s ease-in;
     -webkit-transition: background-color .2s ease-in;
@@ -190,7 +190,7 @@ li {
 .search {
     text-align: center;
     position: relative;
-    top: -5px;
-    right: 240px;
-    float: right;
+    top: 50px;
+    left: 400px;
+    float: left;
 }
