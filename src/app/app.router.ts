@@ -7,6 +7,7 @@ import { SignUpComponent } from './components/user/signup/signup.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { SearchComponent } from './components/search/search/search.component';
 import { AuthGuard } from './components/service/auth-guard.service';
+import { IntroComponent } from './components/introduce/intro.component';
 
 export const router: Routes = [
     {
@@ -20,6 +21,9 @@ export const router: Routes = [
     },
     {
         path: 'signup', component: SignUpComponent
+    },
+    {
+        path: 'introduce', component: IntroComponent
     },
     {
         path: 'profile', component: ProfileComponent,

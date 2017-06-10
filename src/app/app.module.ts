@@ -26,6 +26,8 @@ import { SearchOneService } from './components/service/search-one.service';
 import { AuthGuard } from './components/service/auth-guard.service';
 import { AuthService } from './components/service/auth.service';
 import { SharedService } from './components/service/shared.service';
+import { IntroComponent } from './components/introduce/intro.component';
+import { IntrocontentsComponent } from './components/introduce/introcontents.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { SharedService } from './components/service/shared.service';
     ProfileComponent,
     LoginWindow,
     SearchComponent,
-    ResultContentsComponent
+    ResultContentsComponent,
+    IntroComponent,
+    IntrocontentsComponent
   ],
   imports: [
     BrowserModule,
