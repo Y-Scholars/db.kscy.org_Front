@@ -9,10 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <script src="https://use.fontawesome.com/c0d317c501.js"></script>
+    <script type="text/javascript">
+        var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson');
+        for (var word in mobileKeyWords) {
+            if (navigator.userAgent.match(mobileKeyWords[word]) != null) {
+                alert("PC버전에 최적화되어 있습니다. PC로 접속해주세요.");
+                history.back();
+                break;
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <app-root>Loading...</app-root>
+    <app-root></app-root>
 </body>
 
 </html>

@@ -21,7 +21,7 @@ img {
 }
 
 .text {
-    background: url(./assets/img/back.png);
+    background: url('back.png');
     padding-top: 20px;
     background-repeat: no-repeat;
     font-size: 15pt;

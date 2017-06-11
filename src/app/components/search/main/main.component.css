@@ -11,7 +11,7 @@ img {
     background: #ffffff;
     text-align: center;
     font-family: 'Nanum Barun Gothic', sans-serif;
-    background-image: url('./assets/img/db_web_main.jpg');
+    background-image: url('db_web_main.jpg');
 }
 
 #search_title {
@@ -109,17 +109,17 @@ img {
 #sub01 {
     padding-left: 10px;
     padding-right: 10px;
-    background: url('./assets/img/sub1.png') 50% 0 no-repeat;
+    background: url('sub1.png') 50% 0 no-repeat;
 }
 
 #sub02 {
     padding-left: 10px;
     padding-right: 10px;
-    background: url('./assets/img/sub2.png') 50% 0 no-repeat;
+    background: url('sub2.png') 50% 0 no-repeat;
 }
 
 #sub03 {
     padding-left: 10px;
     padding-right: 10px;
-    background: url('./assets/img/sub3.png') 50% 0 no-repeat;
+    background: url('sub3.png') 50% 0 no-repeat;
 }

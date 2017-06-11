@@ -1,8 +1,6 @@
 import paramiko
 import os
 
-#오류 발생시에는 pip install paramiko
-
 key = paramiko.RSAKey.from_private_key_file('./yscholar_aws.pem')
 client = paramiko.SSHClient()
 client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
