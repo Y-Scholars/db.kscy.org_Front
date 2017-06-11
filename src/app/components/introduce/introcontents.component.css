@@ -1,8 +1,31 @@
 .container {
-    background: #f8f8f8;
+    background: #ffffff;
     font-family: 'Nanum Barun Gothic', sans-serif;
-    text-align: left;
+    text-align: center;
     width: 100%;
     height: auto;
     min-height: 770px;
+    display: table;
+}
+
+.introduce {
+    width: 400px;
+    margin-left: 30%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.frame {
+    display: inherit;
+    width: 400px;
+    float: left;
+}
+
+#title {
+    font-weight: bold;
+}
+
+p {
+    width: 1000px;
 }
