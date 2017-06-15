@@ -55,6 +55,7 @@ export class ResultListComponent implements OnInit {
 
                 if (obj.hits.total == 0) {
                     console.log("break");
+                    this.count = 0;
                 }
                 else {
                     for (var i = 0; i < obj.hits.hits.length; i++) {
