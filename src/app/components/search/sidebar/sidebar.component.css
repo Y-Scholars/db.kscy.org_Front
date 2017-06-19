@@ -21,7 +21,7 @@ img {
 }
 
 .text {
-    background: url('back.png');
+    background: url('/assets/img/back.png');
     padding-top: 20px;
     background-repeat: no-repeat;
     font-size: 15pt;
@@ -30,6 +30,19 @@ img {
     background-color: #003366;
 }
 
+/* Local
+
+.text {
+    background: url('/assets/img/back.png');
+    padding-top: 20px;
+    background-repeat: no-repeat;
+    font-size: 15pt;
+    color: white;
+    height: 80px;
+    background-color: #003366;
+}
+
+*/
 .texts {
     padding-left: 0px;
     width: 225px;
