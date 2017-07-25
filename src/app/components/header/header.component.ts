@@ -28,12 +28,12 @@ export class HeaderComponent implements OnInit {
     }
 
     loginPopup() {
-        // this.modal.alert()
-        //     .title('Hello World')
-        //     .body('In Angular 2')
-        //     .open();
-        //this.modal.open(LoginWindow, overlayConfigFactory({ isBlocking: false }, BSModalContext));
-        alert("제 8회 KSCY 시작으로 공식적으로 서비스될 예정입니다. 문의사항은 office@kscy.kr 로 보내주세요.");
+        this.modal.alert()
+             .title('Hello World')
+             .body('In Angular 2')
+             .open();
+        this.modal.open(LoginWindow, overlayConfigFactory({ isBlocking: false }, BSModalContext));
+        //alert("제 8회 KSCY 시작으로 공식적으로 서비스될 예정입니다. 문의사항은 office@kscy.kr 로 보내주세요.");
     }
 
     logout() {
