@@ -35,6 +35,8 @@ export class ResultContentsComponent implements OnInit {
       res => {
         let obj = JSON.parse(res);
 
+        console.log(res);
+
         this.research_name = obj.hits.hits[0]._source.research_name;
         this.author = obj.hits.hits[0]._source.researcher_name;
         this.school = obj.hits.hits[0]._source.org;

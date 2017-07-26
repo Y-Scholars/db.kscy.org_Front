@@ -23,6 +23,7 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import { SignupService } from './components/service/signup.service';
 import { SearchService } from './components/service/search.service';
 import { SearchOneService } from './components/service/search-one.service';
+import { CookieService } from './components/service/cookie.service';
 import { AuthGuard } from './components/service/auth-guard.service';
 import { AuthService } from './components/service/auth.service';
 import { SharedService } from './components/service/shared.service';
@@ -54,7 +55,7 @@ import { IntrocontentsComponent } from './components/introduce/introcontents.com
     BootstrapModalModule,
     RouterModule.forRoot(router)
     ],
-  providers: [SearchService,AuthService,AuthGuard, SearchOneService, SharedService],
+  providers: [SearchService,AuthService,AuthGuard, SearchOneService, SharedService,CookieService],
   bootstrap: [AppComponent],
   entryComponents: [
       LoginWindow,

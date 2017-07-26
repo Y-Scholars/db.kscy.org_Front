@@ -7,6 +7,8 @@ import {
     Router
 } from '@angular/router';
 
+import {CookieService} from './cookie.service';
+
 
 import 'rxjs/add/operator/map';
 
@@ -16,7 +18,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthService {
 
-    constructor(private http: Http, private router: Router) { }
+    constructor(private http: Http, private router: Router, private cookie:CookieService) { }
 
     login(email: String, password: String, autoLogin: boolean) {
         let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:5000/api/v1/auth";
@@ -38,6 +40,8 @@ export class AuthService {
                 sessionStorage.setItem('id_token', res.data.token);
                 sessionStorage.setItem('user_id', res.data.user_id);
 
+                this.cookie.setCookie('id_token',res.data.token,1);
+
                 location.href = '/home';
             },
 
@@ -58,8 +62,8 @@ export class AuthService {
         let isValid: boolean = true;
 
         //look for token
-        var sessionToken = sessionStorage.getItem('id_token');
-
+        //var sessionToken = sessionStorage.getItem('id_token');
+        var sessionToken = this.cookie.getCookie('id_token');
         //Token Exist
         if (sessionToken) {
             console.log("sessionLoggedIn");
@@ -76,6 +80,8 @@ export class AuthService {
     logout() {
         alert("로그아웃 되었습니다.");
         location.href = '/home';
+
+        this.cookie.delete_cookie('id_token');
 
         var localToken = localStorage.getItem('id_token');
         var sessionToken = sessionStorage.getItem('id_token');
