@@ -38,10 +38,10 @@ export class ResultListComponent implements OnInit {
     //TODO Result Bind
     ngOnInit() {
         this.shared.langUpdated.subscribe(
-      (lang) => {
-        this.search_type = this.shared.getActive();
-      }
-    );
+            (lang) => {
+                this.search_type = this.shared.getActive();
+            }
+        );
         this.search_type = this.shared.getActive();
         console.log(this.search_type);
         let key = this.route.snapshot.queryParams["q"];
@@ -108,7 +108,7 @@ export class ResultListComponent implements OnInit {
 
     search() {
         this.input = (<HTMLInputElement>document.getElementById("input")).value;
-        location.href = '/search?q=' + this.input;
+        location.href = '/search?q=' + encodeURIComponent(this.input.toString());
     }
 
     toBest() {

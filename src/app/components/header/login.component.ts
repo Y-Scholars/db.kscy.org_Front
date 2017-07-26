@@ -44,7 +44,8 @@ export class LoginWindow {
     }
 
     onLogin() {
-        this.auth.login(this.email, this.password, this.autoLogin);
+        if(this.email != "" && this.password != "")
+            this.auth.login(this.email, this.password, this.autoLogin);
     }
 
     onSignup() {
