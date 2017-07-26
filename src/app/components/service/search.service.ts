@@ -8,10 +8,9 @@ export class SearchService {
     constructor(private http:Http) {
     }
 
-    search(keyword : String) {
-        let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:8888/archive/_search?size=200&q="+keyword;
-
-        console.log(url);
+    search(keyword : string) {
+        alert(keyword);
+        let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:8888/archive/_search?size=200&q="+encodeURIComponent(keyword);
 
         let headers = new Headers({
             'Content-Type': 'application/json' ,
