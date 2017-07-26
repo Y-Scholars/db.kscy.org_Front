@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<div class="DimmedBlockInner">
+    <div class="Close"></div>
+    <div class="Modal LoginTool tabWrap _recognized">
+        <div class="Menu tabHeaders">
+            <div class="Item tabHeader Link">
+                <div class="Link">Profile</div>
+            </div>
+
+        </div>
+
+        <div class="tabItems">
+            <div class="Join tabItem" [style.display]="(active) ? 'none' : 'block' ">
+                <form>
+                    <div class="Content">
+                        <div class="InputWrap">
+                            <label class="Label" for="email">이름</label>
+                            <div class="Label" for="email">{{name}}</div>
+                        </div>
+                        <div class="InputWrap">
+                            <label class="Label" for="email">이메일</label>
+                            <div class="Label" for="email">{{mail}}</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

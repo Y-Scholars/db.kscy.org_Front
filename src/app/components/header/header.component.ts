@@ -1,6 +1,7 @@
 import { Component, ViewContainerRef, ViewEncapsulation,OnInit } from '@angular/core';
 import { Modal } from 'angular2-modal/plugins/bootstrap';
 import { LoginWindow } from './login.component';
+import { ProfileWindow } from './profile.component';
 import { overlayConfigFactory } from "angular2-modal";
 import { BSModalContext } from 'angular2-modal/plugins/bootstrap';
 
@@ -38,8 +39,7 @@ export class HeaderComponent implements OnInit {
 
     profile() {
         if(this.auth.loggedIn()) {
-            this.auth.getProfile();
-            this.router.navigate(['/profile']);
+            this.modal.open(ProfileWindow, overlayConfigFactory({ isBlocking: false }, BSModalContext));
         }
         else {
             alert("로그인을 해주세요.");

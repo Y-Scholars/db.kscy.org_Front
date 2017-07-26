@@ -41,6 +41,7 @@ export class AuthService {
                 sessionStorage.setItem('user_id', res.data.user_id);
 
                 this.cookie.setCookie('id_token',res.data.token,1);
+                this.cookie.setCookie('user_id', res.data.user_id,1);
 
                 location.href = '/home';
             },
@@ -108,10 +109,10 @@ export class AuthService {
     getProfile() {
         //TODO add prefix value
         
-        var userID = sessionStorage.getItem('user_id');
+        var userID = this.cookie.getCookie('user_id');
         let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:5000/api/v1/users/" + userID;
         //TODO check token location & get token value
-        let token: String = sessionStorage.getItem('id_token');
+        let token: String = this.cookie.getCookie('id_token');
 
         console.log(url);
         console.log(token);
@@ -134,7 +135,7 @@ export class AuthService {
             .map(res => res.json())
             .subscribe(
             res => {
-                console.log("Response : " + res.status);
+                console.log("Response : " + JSON.stringify(res));
             },
 
             error => {
@@ -142,5 +143,7 @@ export class AuthService {
                 console.log(error.text());
             }
             );
+
+        return this.http.get(url, options).map(res => res.json());
     }
 }

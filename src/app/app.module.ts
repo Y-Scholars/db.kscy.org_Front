@@ -29,6 +29,7 @@ import { AuthService } from './components/service/auth.service';
 import { SharedService } from './components/service/shared.service';
 import { IntroComponent } from './components/introduce/intro.component';
 import { IntrocontentsComponent } from './components/introduce/introcontents.component';
+import { ProfileWindow } from './components/header/profile.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { IntrocontentsComponent } from './components/introduce/introcontents.com
     SearchComponent,
     ResultContentsComponent,
     IntroComponent,
-    IntrocontentsComponent
+    IntrocontentsComponent,
+    ProfileWindow
   ],
   imports: [
     BrowserModule,
@@ -59,6 +61,7 @@ import { IntrocontentsComponent } from './components/introduce/introcontents.com
   bootstrap: [AppComponent],
   entryComponents: [
       LoginWindow,
+      ProfileWindow
   ]
 })
 export class AppModule { }
