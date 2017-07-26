@@ -28,10 +28,6 @@ export class HeaderComponent implements OnInit {
     }
 
     loginPopup() {
-        this.modal.alert()
-             .title('Hello World')
-             .body('In Angular 2')
-             .open();
         this.modal.open(LoginWindow, overlayConfigFactory({ isBlocking: false }, BSModalContext));
         //alert("제 8회 KSCY 시작으로 공식적으로 서비스될 예정입니다. 문의사항은 office@kscy.kr 로 보내주세요.");
     }
@@ -41,8 +37,13 @@ export class HeaderComponent implements OnInit {
     }
 
     profile() {
-        this.auth.getProfile();
-        this.router.navigate(['/profile']);
+        if(this.auth.loggedIn()) {
+            this.auth.getProfile();
+            this.router.navigate(['/profile']);
+        }
+        else {
+            alert("로그인을 해주세요.");
+        } 
     }
 
     home() {

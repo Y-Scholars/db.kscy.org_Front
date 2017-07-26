@@ -36,7 +36,11 @@ export class LoginWindow {
     */
 
     tabClicked() {
-        this.active = !this.active;
+        this.active = false;
+    }
+
+    tabactive() {
+        this.active = true;
     }
 
     onLogin() {
