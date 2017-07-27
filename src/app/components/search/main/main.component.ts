@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 
 export class MainComponent implements OnInit {
 
-    keyword : String;
 
     ngOnInit() {
 
@@ -17,9 +16,8 @@ export class MainComponent implements OnInit {
     constructor() {
     }
 
-    search() {
-        this.keyword = (<HTMLInputElement>document.getElementById("keyword")).value;
-        location.href = '/search?q=' + encodeURIComponent(this.keyword.toString());
+    search(value:String) {
+        location.href = '/search?q=' + encodeURIComponent(value.toString());
     }
 
 }

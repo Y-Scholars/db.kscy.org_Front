@@ -106,9 +106,8 @@ export class ResultListComponent implements OnInit {
         this.keywords = key;
     }
 
-    search() {
-        this.input = (<HTMLInputElement>document.getElementById("input")).value;
-        location.href = '/search?q=' + encodeURIComponent(this.input.toString());
+    search(value:String) {
+        location.href = '/search?q=' + encodeURIComponent(value.toString());
     }
 
     toBest() {
