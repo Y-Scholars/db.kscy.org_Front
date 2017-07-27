@@ -15,14 +15,23 @@ export class ProfileWindow implements OnInit {
     }
 
     name : String;
-    mail : String;
+    school : String;
+    phone : String;
+    gender : String;
 
     ngOnInit() {
         this.auth.getProfile().subscribe(
             res => {
                 console.log("Response : " + JSON.stringify(res));
-                this.name = res.username;
-                this.mail = res.email;
+                this.name = res.name;
+                this.school = res.school;
+                this.phone = res.phone_number;
+                if(res.gender == "male") {
+                    this.gender = "남자";
+                }
+                else {
+                    this.gender = "여자";
+                }
             },
 
             error => {

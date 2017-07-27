@@ -16,8 +16,8 @@ export class MainComponent implements OnInit {
     constructor() {
     }
 
-    search(value:String) {
-        location.href = '/search?q=' + encodeURIComponent(value.toString());
+    search(value:string) {
+        location.href = '/search?q=' + encodeURIComponent(value);
     }
 
 }

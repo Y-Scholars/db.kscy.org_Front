@@ -107,11 +107,7 @@ export class AuthService {
     }
 
     getProfile() {
-        //TODO add prefix value
-        
-        var userID = this.cookie.getCookie('user_id');
-        let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:5000/api/v1/users/" + userID;
-        //TODO check token location & get token value
+        let url = "http://ec2-54-190-7-146.us-west-2.compute.amazonaws.com:5000/api/v1/students";
         let token: String = this.cookie.getCookie('id_token');
 
         console.log(url);
@@ -130,19 +126,6 @@ export class AuthService {
         let options = new RequestOptions({
             headers: headers
         });
-
-        this.http.get(url, options)
-            .map(res => res.json())
-            .subscribe(
-            res => {
-                console.log("Response : " + JSON.stringify(res));
-            },
-
-            error => {
-                //alert(error.text());
-                console.log(error.text());
-            }
-            );
 
         return this.http.get(url, options).map(res => res.json());
     }
