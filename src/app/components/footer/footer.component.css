@@ -99,3 +99,9 @@
     margin: 0px;
     font-size: 12pt;
 }
+
+@media only screen and (max-width: 768px) {
+    .sub-footer {
+        display: none;
+    }
+}

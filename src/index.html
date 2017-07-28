@@ -13,8 +13,8 @@
         var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson');
         for (var word in mobileKeyWords) {
             if (navigator.userAgent.match(mobileKeyWords[word]) != null) {
-                alert("PC버전에 최적화되어 있습니다. PC로 접속해주세요.");
-                history.back();
+                if(location.href.indexOf("mobile") == -1)
+                    location.href = "mobile";
                 break;
             }
         }

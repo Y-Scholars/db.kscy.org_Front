@@ -25,14 +25,14 @@ export const router: Routes = [
     },
     {
         path: 'introduce', component: IntroComponent
-    },
+    },{
+        path: 'mobile', component : MobileComponent
+    }, 
     {
         path: 'profile', component: ProfileComponent,
         canActivate: [AuthGuard]
     }, {
         path: ':prefix', component  : ResultComponent,
         canActivate: [AuthGuard]
-    }, {
-        path: 'mobile', component : MobileComponent
     }
 ];

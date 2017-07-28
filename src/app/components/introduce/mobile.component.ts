@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./mobile.component.css']
 })
 
-export class MobilComponent implements OnInit {
+export class MobileComponent implements OnInit {
 
 
     ngOnInit() {
