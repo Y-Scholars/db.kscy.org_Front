@@ -28,6 +28,7 @@ import { AuthGuard } from './components/service/auth-guard.service';
 import { AuthService } from './components/service/auth.service';
 import { SharedService } from './components/service/shared.service';
 import { IntroComponent } from './components/introduce/intro.component';
+import { MobileComponent } from './components/introduce/mobile.component';
 import { IntrocontentsComponent } from './components/introduce/introcontents.component';
 import { ProfileWindow } from './components/header/profile.component';
 
@@ -47,7 +48,8 @@ import { ProfileWindow } from './components/header/profile.component';
     ResultContentsComponent,
     IntroComponent,
     IntrocontentsComponent,
-    ProfileWindow
+    ProfileWindow, 
+    MobileComponent
   ],
   imports: [
     BrowserModule,
